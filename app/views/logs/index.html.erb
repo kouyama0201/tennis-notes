@@ -13,6 +13,8 @@
       <p><%= log.text %></p>
       <p><%= image_tag log.image.to_s %></p>
       <p><%= log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+      <%= link_to '編集', "/logs/#{log.id}/edit", method: :get %></li>
+      <%= link_to '削除', "/logs/#{log.id}", method: :delete %></li>
     <% end %>
   </ul>
   <%= paginate(@log) %>
