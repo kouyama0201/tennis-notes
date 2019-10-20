@@ -10,11 +10,13 @@ class LogsController < ApplicationController
 
   def create
     Log.create(log_params)
+    redirect_to root_path
   end
 
   def destroy
     log = Log.find(params[:id])
     log.destroy
+    redirect_to root_path
   end
 
   def edit
@@ -24,6 +26,7 @@ class LogsController < ApplicationController
   def update
     log = Log.find(params[:id])
     log.update(log_params)
+    redirect_to root_path
   end
 
   def show
