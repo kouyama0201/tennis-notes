@@ -18,18 +18,24 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
+          <% if user_signed_in? %>
             <li class="nav-item active">
-              <%= link_to 'New', new_log_path, method: :get, class: "nav-link" %>
+            <%= link_to current_user.name, user_path(current_user), method: :get, class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/">LogIn</a>
+              <%= link_to '新規投稿', new_log_path, method: :get, class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/">LogOut</a>
+              <%= link_to 'LogOut', destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item active">
+              <%= link_to 'LogIn', new_user_session_path, method: :get, class: "nav-link" %>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/">SignUp</a>
+              <%= link_to 'SignUp', new_user_registration_path, method: :get, class: "nav-link" %>
             </li>
+          <% end %>
           </ul>
         </div>
       </nav>
