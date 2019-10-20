@@ -26,6 +26,10 @@ class LogsController < ApplicationController
     log.update(log_params)
   end
 
+  def show
+    @log = Log.find(params[:id])
+  end
+
   private
   def log_params
     params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :image)
