@@ -9,7 +9,7 @@ class LogsController < ApplicationController
   end
 
   def create
-    Log.create(serve: log_params[:serve], smash: log_params[:smash], volley: log_params[:volley], stroke: log_params[:stroke], game: log_params[:game], text: log_params[:text], image: log_params[:image], user_id: current_user.id)
+    Log.create(log_params)
     redirect_to root_path
   end
 
@@ -31,10 +31,13 @@ class LogsController < ApplicationController
 
   def show
     @log = Log.find(params[:id])
+    @comment = Comment.new
+    @comments = @log.comments.includes(:user)
   end
 
   private
   def log_params
-    params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :image)
+    params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :image).merge(user_id: current_user.id)
   end
+
 end
