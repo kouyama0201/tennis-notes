@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
   def show
-    @log = Log.where(user_id: current_user.id).page(params[:page]).per(5).order("created_at DESC")
+    user = User.find(params[:id])
+    @name = user.name
+    @log = user.logs.page(params[:page]).per(5).order("created_at DESC")
   end
+
 end
