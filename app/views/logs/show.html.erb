@@ -24,6 +24,9 @@
       <p>
         <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
         <%= comment.text %>
+        <% if user_signed_in? && comment.user_id == current_user.id %>
+        <%= link_to "[×]", log_comment_path(@log, comment), method: :delete %>
+        <% end %>
       </p>
     <% end %>
   <% end %>
