@@ -1,5 +1,7 @@
 {
   "name": "tennis-practice-plus",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "chart.js": "^2.7.1"
+  }
 }

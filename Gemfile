@@ -70,3 +70,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'devise'
+gem "chartkick"
+gem 'chartable'
+gem 'chart-js-rails'
+gem 'momentjs-rails'
+gem 'gon'
