@@ -5,11 +5,6 @@
   <br>
   <ul>
     <% @log.each do |log| %>
-      <p>サーブ<%= log.serve %>分</p>
-      <p>スマッシュ<%= log.smash %>分</p>
-      <p>ボレー<%= log.volley %>分</p>
-      <p>ストローク<%= log.stroke %>分</p>
-      <p>ゲーム形式<%= log.game %>分</p>
       <p><%= log.text %></p>
       <p><%= image_tag log.image.to_s %></p>
       <p><%= log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
