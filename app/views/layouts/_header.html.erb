@@ -1,0 +1,37 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
+    <a class="navbar-brand mb-0 h1" href="/">Tennis Notes</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+        <%= link_to current_user.name, user_path(current_user), method: :get, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to '新規投稿', new_log_path, method: :get, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'LogOut', destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item active">
+          <%= link_to 'LogIn', new_user_session_path, method: :get, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'SignUp', new_user_registration_path, method: :get, class: "nav-link" %>
+        </li>
+        <div class="easy-login">
+          <%= form_for(User.create, url: user_session_path) do |f| %>
+            <%= f.hidden_field :email, value: "test@example.com" %>
+            <%= f.hidden_field :password, value: "123456" %>
+            <%= f.submit "簡単ログイン", class:"nav-item active btn center-block btn-info"%>
+          <% end %>
+        </div>
+      <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,14 +1,14 @@
 <body> 
-  <p>Tennis Practice Plusは日々の練習を記録して共有し、練習内容について、ユーザー同士で意見交換し合えるアプリです。</p>
+  <p>Tennis Notesは日々の練習を記録して共有し、練習内容について、ユーザー同士で意見交換し合えるアプリです。</p>
   <p>日頃の積み重ねを可視化する事で、モチベーションにも繋がります。</p>
   <p>日々の練習をより濃いものとし、ライバルに差を付けましょう！</p>
   <br>
   <ul>
     <% @log.each do |log| %>
+      <p>投稿者：<%= log.user.name %></p>
       <p><%= log.text %></p>
       <p><%= image_tag log.image.to_s %></p>
       <p><%= log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-      <p>投稿者：<%= log.user.name %></p>
       <%= link_to "詳細", log_path(log.id), method: :get, class: "btn btn-success" %>
       <% if user_signed_in? && log.user_id == current_user.id %>
         <%= link_to '編集', "/logs/#{log.id}/edit", method: :get, class: "btn btn-success" %></li>
