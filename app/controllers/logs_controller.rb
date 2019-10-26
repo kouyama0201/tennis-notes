@@ -10,13 +10,13 @@ class LogsController < ApplicationController
 
   def create
     Log.create(log_params)
-    redirect_to root_path, notice: '投稿しました'
+    redirect_to root_path, notice: '投稿しました。'
   end
 
   def destroy
     log = Log.find(params[:id])
     log.destroy if log.user_id === current_user.id
-    redirect_to root_path, notice: '投稿を削除しました'
+    redirect_to root_path, notice: '投稿を削除しました。'
   end
 
   def edit
@@ -26,7 +26,7 @@ class LogsController < ApplicationController
   def update
     log = Log.find(params[:id])
     log.update(log_params) if log.user_id == current_user.id
-    redirect_to root_path, notice: '投稿を更新しました'
+    redirect_to root_path, notice: '投稿を更新しました。'
   end
 
   def show

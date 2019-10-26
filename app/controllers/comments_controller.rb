@@ -2,14 +2,14 @@ class CommentsController < ApplicationController
 
   def create
     Comment.create(comment_params)
-    redirect_back(fallback_location: root_path, notice: 'コメントしました')
+    redirect_back(fallback_location: root_path, notice: 'コメントしました。')
   end
 
   def destroy
     @log = Log.find(params[:log_id])
     @comment = @log.comments.find(params[:id])
     @comment.destroy
-    redirect_to log_path(@log), notice: 'コメントを削除しました'
+    redirect_to log_path(@log), notice: 'コメントを削除しました。'
   end
 
   private
