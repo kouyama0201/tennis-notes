@@ -7,9 +7,13 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-        <%= link_to current_user.name, user_path(current_user), method: :get, class: "nav-link" %>
-        </li>
+        <div class="dropdown">
+        <ul class="nav-item active nav-link dropdown-toggle" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=current_user.name %></ul>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><%= link_to "マイページ", user_path(current_user), method: :get, class: "nav-link" %></li>
+          <li><%= link_to "ユーザー設定", edit_user_registration_path, method: :get, class: "nav-link" %></li>
+        </ul>
+        </div>
         <li class="nav-item active">
           <%= link_to '新規投稿', new_log_path, method: :get, class: "nav-link" %>
         </li>
