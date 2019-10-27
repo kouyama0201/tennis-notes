@@ -1,17 +1,20 @@
-<p><%= @name %>の投稿一覧</p>
-<% @log.each do |log| %>
-  <p>サーブ<%= log.serve %>分</p>
-  <p>スマッシュ<%= log.smash %>分</p>
-  <p>ボレー<%= log.volley %>分</p>
-  <p>ストローク<%= log.stroke %>分</p>
-  <p>ゲーム形式<%= log.game %>分</p>
-  <p><%= log.text %></p>
-  <p><%= image_tag log.image.to_s %></p>
-  <p><%= log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-  <%= link_to "詳細", log_path(log.id), method: :get, class: "btn btn-success" %>
-    <% if user_signed_in? && log.user_id == current_user.id %>
-      <%= link_to '編集', "/logs/#{log.id}/edit", method: :get, class: "btn btn-success" %></li>
-      <%= link_to '削除', "/logs/#{log.id}", method: :delete, class: "btn btn-success" %></li>
-    <% end %>
-<% end %>
+<br>
+<%= link_to 'トップページへ戻る', "/" %>
+<h3><%= @name %>の投稿一覧</h3>
+<br>
+  <% @log.each do |log| %>
+    <div class="card-columns">
+      <div class="card border-light mb-3 text-white bg-dark" style="width: 23rem;">
+        <h5 class="card-header border-light">投稿者：<%= log.user.name %></h5>
+          <div class="card-body">
+            <p class="card-text"><%= log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+            <%= link_to "詳細", log_path(log.id), method: :get, class: "btn btn-primary" %>
+            <% if user_signed_in? && log.user_id == current_user.id %>
+              <%= link_to '編集', "/logs/#{log.id}/edit", method: :get, class: "btn btn-success" %></li>
+              <%= link_to '削除', "/logs/#{log.id}", method: :delete, class: "btn btn-danger" %></li>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  <% end %>
 <%= paginate(@log) %>

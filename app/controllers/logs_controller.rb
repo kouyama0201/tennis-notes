@@ -2,7 +2,7 @@ class LogsController < ApplicationController
   before_action :set_log, only: [:edit, :show]
 
   def index
-    @log = Log.includes(:user).page(params[:page]).per(5).order("created_at DESC")
+    @log = Log.includes(:user).page(params[:page]).per(6).order("created_at DESC")
   end
 
   def new
@@ -17,7 +17,7 @@ class LogsController < ApplicationController
   def destroy
     log = Log.find(params[:id])
     log.destroy if log.user_id === current_user.id
-    redirect_to root_path, notice: '投稿を削除しました。'
+    redirect_back(fallback_location: root_path, notice: '投稿を削除しました。')
   end
 
   def edit
