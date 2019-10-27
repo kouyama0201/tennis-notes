@@ -1,14 +1,8 @@
 <%= link_to '一覧へ戻る', "/" %>
-<div>
-<%# <%= javascript_include_tag 'Chart.min' %>
-<%# <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script> %>
-<%# <%= render 'layouts/graph' %>
-<canvas id="myChart" width="300" height="80"></canvas>
-<script>draw_graph();</script>
+<%= render partial: "layouts/graph", locals: { graph: @graph } %>
 <p><%= @log.text %></p>
 <p><%= image_tag @log.image.to_s %></p>
 <p><%= @log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-</div>
 <% if current_user %>
   <%= form_with model:[@log, @comment], local: true do |f| %>
     <%= f.label "コメント" %>

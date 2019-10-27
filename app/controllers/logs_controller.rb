@@ -31,11 +31,7 @@ class LogsController < ApplicationController
 
   def show
     @log = Log.find(params[:id])
-    gon.serve = @log.serve
-    gon.smash = @log.smash
-    gon.volley = @log.volley
-    gon.stroke = @log.stroke
-    gon.game = @log.game
+    @graph = [@log.serve, @log.smash, @log.volley, @log.stroke, @log.game]
     @comment = Comment.new
     @comments = @log.comments.includes(:user)
   end
