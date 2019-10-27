@@ -72,3 +72,4 @@ gem 'kaminari'
 gem 'devise'
 gem "chartkick"
 gem 'chart-js-rails'
+gem 'haml-rails'
