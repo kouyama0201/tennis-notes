@@ -5,12 +5,15 @@ body {
   color: white;
   padding-top: 56px;
 }
-.card-columns{
+.card-columns {
   display: inline-flex;
 }
 
+.dropdown-menu {
+  text-align: center;
+}
 .container {
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .pagination {
