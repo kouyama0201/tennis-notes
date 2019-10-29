@@ -1,26 +1,24 @@
-<div>
-  <h3>
-    練習内容を記録する
-  </h3>
+<h2>練習内容を記録する</h2>
+
   <%= form_with model: @log, local: true do |f| %>
-    <%= f.label "練習時間" %>
+    <%= f.label "練習時間（分）" %>
     <br>
     <%= f.label "サーブ" %>
-    <%= f.text_area :serve, value: '0' %>
+    <%= f.text_field :serve, size: 8, value: '0', style: "text-align: right;" %>&emsp;
     <%= f.label "スマッシュ" %>
-    <%= f.text_area :smash, value: '0' %>
+    <%= f.text_field :smash, size: 8, value: '0', style: "text-align: right;" %>&emsp;
     <%= f.label "ボレー" %>
-    <%= f.text_area :volley, value: '0' %>
+    <%= f.text_field :volley, size: 8, value: '0', style: "text-align: right;" %>&emsp;
     <%= f.label "ストローク" %>
-    <%= f.text_area :stroke, value: '0' %>
+    <%= f.text_field :stroke, size: 8, value: '0', style: "text-align: right;" %>&emsp;
     <%= f.label "ゲーム形式" %>
-    <%= f.text_area :game, value: '0' %>
+    <%= f.text_field :game, size: 8, value: '0', style: "text-align: right;" %>
     <br>
-    <%= f.label "テニスノート" %>
     <br>
-    <%= f.text_area :text, rows: "10", cols: "50" %>
+    <%= f.label "練習メモ" %>
+    <br>
+    <%= f.text_area :text, rows: 10, cols: 60 %>
     <br>
     <%= f.file_field :image %>
-    <%= f.submit "記録" %>
+    <%= f.submit "記録", class: "btn btn-primary btn-lg" %>
   <% end %>
-</div>
