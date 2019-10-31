@@ -19,3 +19,6 @@
 //= require bootstrap-sprockets
 //= require Chart.bundle
 //= require chartkick
+//= require moment
+//= require moment/ja.js
+//= require tempusdominus-bootstrap-4.js

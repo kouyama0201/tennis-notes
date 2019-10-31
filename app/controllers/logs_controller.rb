@@ -37,7 +37,7 @@ class LogsController < ApplicationController
 
   private
   def log_params
-    params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :image).merge(user_id: current_user.id)
+    params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :image, :practice_day).merge(user_id: current_user.id)
   end
 
   def set_log
