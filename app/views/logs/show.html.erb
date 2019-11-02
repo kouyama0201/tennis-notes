@@ -1,16 +1,9 @@
-<%= link_to '一覧へ戻る', "/" %>
-<%= render partial: "layouts/graph", locals: { graph: @graph } %>
-<p><%= @log.text %></p>
+<br><h5>練習日：<%= @log.practice_day.strftime('%Y/%m/%d') %><h5>
+<%= render partial: "layouts/graph", locals: { graph: @graph } %><br>
+
+<p><%= @log.text %></p><br>
 <p><%= image_tag @log.image.to_s %></p>
-<p><%= @log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-<% if current_user %>
-  <%= form_with model:[@log, @comment], local: true do |f| %>
-    <%= f.label "コメント" %>
-    <br>
-    <%= f.text_area :text, cols: "60" %>
-    <%= f.submit "送信" %>
-  <% end %>
-<% end %>
+<p>投稿日時：<%= @log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
 
 <div class="comments">   
   <h4>＜コメント一覧＞</h4>
@@ -20,9 +13,18 @@
         <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
         <%= comment.text %>
         <% if user_signed_in? && comment.user_id == current_user.id %>
-        <%= link_to "[×]", log_comment_path(@log, comment), method: :delete %>
+          <%= link_to log_comment_path(@log, comment), method: :delete do %>
+            <i class="fa fa-times-circle" style="color: white;"></i>
+          <% end %>
         <% end %>
       </p>
     <% end %>
   <% end %>
 </div>
+
+<% if current_user %>
+  <%= form_with model:[@log, @comment], local: true do |f| %>
+    <%= f.text_area :text, cols: "60", placeholder: "コメントを入力…" , data: { confirm: "アカウントを削除してよろしいでしょうか？" } %>
+    <%= f.submit "送信", class: "btn btn-primary btn-lg" %>
+  <% end %>
+<% end %>
