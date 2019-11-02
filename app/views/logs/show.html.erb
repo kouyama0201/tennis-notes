@@ -1,14 +1,20 @@
-<br><h5>練習日：<%= @log.practice_day.strftime('%Y/%m/%d') %><h5>
+<br><h4>投稿者：<%= @log.user.name %></h4>
+<h5>練習日：<%= @log.practice_day.strftime('%Y/%m/%d') %></h5>
+<h5>合計練習時間：<%= @graph.sum %>分</h5>
+
 <%= render partial: "layouts/graph", locals: { graph: @graph } %><br>
 
-<p><%= @log.text %></p><br>
-<p><%= image_tag @log.image.to_s %></p><br>
+<div class="practice-memo">
+  <h4 class="practice-memo__header">＜テニスノート＞</h4>
+  <p class="practice-memo__body"><%= @log.text %></p><br>
+</div>
+<p class="practice-image"><%= image_tag @log.image.to_s %></p><br>
 
 <div class="container">
   <% if current_user %>
     <%= form_with model:[@log, @comment], local: true do |f| %>
       <%= f.text_area :text, class: "form-control", placeholder: "コメントを入力…" %><br>
-      <%= f.submit "送信", class: "btn btn-primary btn-lg" %>
+      <%= f.submit "送信", class: "btn btn-primary btn-lg btn-block" %>
     <% end %>
   <% end %>
 </div><br>

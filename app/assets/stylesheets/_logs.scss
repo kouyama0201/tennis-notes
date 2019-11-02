@@ -1,6 +1,6 @@
 body {
   background-image: image-url("tennis-court.jpeg");
-  background-size: cover;
+  background-size: 100%;
   text-align: center;
   color: white;
   padding-top: 56px;
@@ -17,6 +17,29 @@ body {
   max-width: 400px;
 }
 
+.practice-memo {
+  display: inline-block;
+  min-height: 320px;
+  width: 750px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  &__header {
+    color: #555555;
+    padding-top: 10px;
+  }
+  &__body {
+    display: inline;
+    color: #666666;
+    line-height: 1.8;
+    font-size: 18px;
+    border-bottom: dotted 0.5px #666666;
+  }
+}
+
+.practice-image {
+  padding-top: 20px;
+}
+
 .comments {
   display: inline-block;
   width: 550px;
@@ -29,7 +52,7 @@ body {
   }
   &__body {
     color: #666666;
-    padding-left: 15px;
+    padding: 0 5px 0 15px;
     text-align: left;
     font-size: 18px;
   }
