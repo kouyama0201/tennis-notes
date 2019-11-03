@@ -16,7 +16,7 @@
 * Ruby 2.6.3
 * Ruby on Rails 5.2.3
 * MySQL
-* SASS,BEM,Bootstrap
+* Sass,BEM,Bootstrap
 * Git,GitHub
 
 # 未実装機能
