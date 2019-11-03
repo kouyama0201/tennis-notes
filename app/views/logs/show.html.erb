@@ -1,28 +1,41 @@
-<%= link_to '一覧へ戻る', "/" %>
-<%= render partial: "layouts/graph", locals: { graph: @graph } %>
-<p><%= @log.text %></p>
-<p><%= image_tag @log.image.to_s %></p>
-<p><%= @log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-<% if current_user %>
-  <%= form_with model:[@log, @comment], local: true do |f| %>
-    <%= f.label "コメント" %>
-    <br>
-    <%= f.text_area :text, cols: "60" %>
-    <%= f.submit "送信" %>
-  <% end %>
-<% end %>
+<br><h4>投稿者：<%= @log.user.name %></h4>
+<h5>練習日：<%= @log.practice_day.strftime('%Y/%m/%d') %></h5>
+<h5>合計練習時間：<%= @graph.sum %>分</h5>
 
-<div class="comments">   
-  <h4>＜コメント一覧＞</h4>
-  <% if @comments %>
-    <% @comments.each do |comment| %>
-      <p>
-        <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
-        <%= comment.text %>
-        <% if user_signed_in? && comment.user_id == current_user.id %>
-        <%= link_to "[×]", log_comment_path(@log, comment), method: :delete %>
-        <% end %>
-      </p>
+<%= render partial: "layouts/graph", locals: { graph: @graph } %><br>
+
+<div class="practice-memo">
+  <h4 class="practice-memo__header">＜テニスノート＞</h4>
+  <p class="practice-memo__body"><%= @log.text %></p><br>
+</div>
+<p class="practice-image"><%= image_tag @log.image.to_s %></p><br>
+
+<div class="container">
+  <% if current_user %>
+    <%= form_with model:[@log, @comment], local: true do |f| %>
+      <%= f.text_area :text, class: "form-control", placeholder: "コメントを入力…" %><br>
+      <%= f.submit "送信", class: "btn btn-primary btn-lg btn-block" %>
     <% end %>
   <% end %>
+</div><br>
+
+<div class="comments">
+  <div class="comments__header">
+    <h4>＜コメント一覧＞</h4>
+  </div>
+  <div class="comments__body">
+    <% if @comments %>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.text %>
+          <% if user_signed_in? && comment.user_id == current_user.id %>
+            <%= link_to log_comment_path(@log, comment), method: :delete do %>
+              <i class="fa fa-times-circle"></i>
+            <% end %>
+          <% end %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
 </div>
