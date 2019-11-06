@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
 
   def create
-    Comment.create(comment_params)
-    redirect_back(fallback_location: root_path, notice: 'コメントしました。')
+    @comment = Comment.create(comment_params)
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: root_path, notice: 'コメントしました。') }
+      format.json
+    end
   end
 
   def destroy
