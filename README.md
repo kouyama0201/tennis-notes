@@ -15,8 +15,8 @@
 # 使用技術
 * Ruby 2.6.3
 * Ruby on Rails 5.2.3
-* MySQL
-* Sass,BEM,Bootstrap
+* MySQL 5.6.43
+* Sass,Bootstrap
 * Git,GitHub
 
 # 未実装機能
