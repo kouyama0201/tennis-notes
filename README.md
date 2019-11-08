@@ -29,4 +29,4 @@
 * RSpec
 * AWS
 * Docker
-* CircleCI/CDパインライン構築
+* CircleCI/CDパイプライン構築

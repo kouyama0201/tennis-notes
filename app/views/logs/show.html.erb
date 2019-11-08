@@ -25,7 +25,7 @@
   </div>
   <% if @comments %>
     <% @comments.each do |comment| %>
-      <div class="comments__text" id="comment" data-comment-id= "<%= comment.id %>">
+      <div class="comments__text" data-comment-id= "<%= comment.id %>">
         <p>
           <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
           <%= comment.text %>
