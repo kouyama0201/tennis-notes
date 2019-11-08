@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @comment = Comment.create(comment_params)
@@ -9,10 +10,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @log = Log.find(params[:log_id])
-    @comment = @log.comments.find(params[:id])
+    @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to log_path(@log), notice: 'コメントを削除しました。'
   end
 
   private

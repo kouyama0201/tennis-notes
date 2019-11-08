@@ -23,19 +23,19 @@
   <div class="comments__header">
     <h4>＜コメント一覧＞</h4>
   </div>
-  <div class="comments__body">
-    <% if @comments %>
-      <% @comments.each do |comment| %>
+  <% if @comments %>
+    <% @comments.each do |comment| %>
+      <div class="comments__text" id="comment" data-comment-id= "<%= comment.id %>">
         <p>
           <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
           <%= comment.text %>
           <% if user_signed_in? && comment.user_id == current_user.id %>
-            <%= link_to log_comment_path(@log, comment), method: :delete do %>
+            <%= link_to "", class: "comment-destroy" do %>
               <i class="fa fa-times-circle"></i>
             <% end %>
           <% end %>
         </p>
-      <% end %>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
