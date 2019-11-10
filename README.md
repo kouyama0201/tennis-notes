@@ -9,6 +9,7 @@
 * 練習記録画像投稿機能(carriewave)
 * 練習記録詳細画面でのグラフ表示機能(chart.js)
 * 練習記録へのコメント投稿・削除機能(Ajax)
+* いいね機能(Ajax)
 * 練習記録一覧画面でのページネーション機能(kaminari)
 * ユーザー登録・ログイン機能(devise)
 
@@ -16,12 +17,11 @@
 * Ruby 2.6.3
 * Ruby on Rails 5.2.3
 * MySQL 5.6.43
-* Sass,Bootstrap
+* Sass,Bootstrap,jQuery
 * Git,GitHub
 
 # 未実装機能
 * ユーザーフォロー機能
-* いいね機能
 * 投稿機能のバリデーション
 
 # 未実装インフラ系
