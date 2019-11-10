@@ -6,17 +6,27 @@ body {
   padding-top: 56px;
 }
 
-.card-columns {
-  display: inline-flex;
-}
-
 .dropdown-menu {
   background-color: #f5f5f5;
   text-align: center;
 }
 
+.card-columns {
+  display: inline-flex;
+}
+
+.card-body {
+  padding: 15px 20px 5px;
+}
+
+.card-text {
+  line-height: 35px;
+  margin: 0;
+}
+
 .likes {
   display: inline-block;
+  margin: 0;
 }
 
 .vertical_like {
