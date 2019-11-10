@@ -314,6 +314,7 @@ DEPENDENCIES
   mini_magick
   momentjs-rails
   mysql2 (>= 0.4.4, < 0.6.0)
+  nokogiri
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)

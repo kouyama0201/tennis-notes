@@ -5,5 +5,4 @@ class UsersController < ApplicationController
     @name = user.name
     @log = user.logs.page(params[:page]).per(5).order("created_at DESC")
   end
-
 end

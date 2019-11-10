@@ -2,7 +2,7 @@ body {
   background-image: image-url("tennis-court.jpeg");
   background-size: 100%;
   text-align: center;
-  color: white;
+  color: #f5f5f5;
   padding-top: 56px;
 }
 .card-columns {
@@ -12,6 +12,10 @@ body {
 .dropdown-menu {
   background-color: #f5f5f5;
   text-align: center;
+}
+
+.vertical_like {
+  color: #f5f5f5;
 }
 
 .container {
