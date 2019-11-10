@@ -9,7 +9,7 @@
           <%= link_to '削除', "/logs/#{log.id}", method: :delete, class: "btn btn-danger" , data: { confirm: '投稿を削除します。よろしいですか？' } %></li>
         <% end %>
         <p class="card-text">投稿日時：<%= log.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-        <div id="likes_buttons_<%= log.id %>">
+        <div class="likes" id="likes_buttons_<%= log.id %>">
           <%= render partial: 'likes/like', locals: { log: log, likes: @likes } %>
         </div>
       </div>

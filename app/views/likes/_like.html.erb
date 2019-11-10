@@ -2,29 +2,22 @@
   <% unless log.like_user(current_user.id).blank? %>
     <%= link_to log_like_path(log_id: log.id ,id: log.likes[0].id), method: :delete, remote: true do %>
       <div class="vertical_like">
-        <i class="fa fa-thumbs-o-up"></i>
+        <i class="fa fa-thumbs-o-up" style="color: red;"></i>
           <span><%= log.likes_count %></span>
       </div>
     <% end %>
   <% else %>
     <%= link_to log_likes_path(log.id), method: :post, remote: true do %>
       <div class="vertical_like">
-        <i class="fa fa-thumbs-o-up"></i>
+        <i class="fa fa-thumbs-o-up" style="color: gray;"></i>
           <span><%= log.likes_count %></span>
       </div>
     <% end %>
   <% end %>
 
 <% else %>
-  <% if log.likes_count > 0 %>
-    <div class="vertical_like">
-      <i class="fa fa-thumbs-o-up"></i>
-        <span><%= log.likes_count %></span>
-    </div>
-  <% else %>
-    <div class="vertical_like">
-      <i class="fa fa-thumbs-o-up"></i>
-        <span><%= log.likes_count %></span>
-    </div>
-  <% end %>
+  <div class="vertical_like">
+    <i class="fa fa-thumbs-o-up"></i>
+      <span><%= log.likes_count %></span>
+  </div>
 <% end %>

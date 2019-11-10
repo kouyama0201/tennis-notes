@@ -1,7 +1,7 @@
 class Log < ApplicationRecord
   belongs_to :user
   has_many :comments
-  has_many :likes
+  has_many :likes, dependent: :destroy
   mount_uploader :image, ImageUploader
 
   def like_user(user_id)
