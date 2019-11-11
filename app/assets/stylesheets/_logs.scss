@@ -2,16 +2,44 @@ body {
   background-image: image-url("tennis-court.jpeg");
   background-size: 100%;
   text-align: center;
-  color: white;
+  color: #f5f5f5;
   padding-top: 56px;
-}
-.card-columns {
-  display: inline-flex;
 }
 
 .dropdown-menu {
   background-color: #f5f5f5;
   text-align: center;
+}
+
+.card-columns {
+  display: inline-flex;
+}
+
+.card-header {
+  border-bottom: none;
+  padding: 10px 20px 5px;
+}
+
+.day {
+  margin: 0 0 5px;
+}
+
+.card-body {
+  padding: 15px 20px 5px;
+}
+
+.card-text {
+  line-height: 35px;
+  margin: 0;
+}
+
+.likes {
+  display: inline-block;
+  margin: 0;
+}
+
+.vertical_like {
+  color: #f5f5f5;
 }
 
 .container {

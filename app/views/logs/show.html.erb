@@ -1,5 +1,5 @@
 <br><h4>投稿者：<%= @log.user.name %></h4>
-<h5>練習日：<%= @log.practice_day.strftime('%Y/%m/%d') %></h5>
+<h5>練習日：<%= @log.practice_day %></h5>
 <h5>合計練習時間：<%= @graph.sum %>分</h5>
 
 <%= render partial: "layouts/graph", locals: { graph: @graph } %><br>
@@ -12,7 +12,7 @@
 
 <div class="container">
   <% if current_user %>
-    <%= form_with model:[@log, @comment],id: "new_comment", local: true do |f| %>
+    <%= form_with model:[@log, @comment], id: "new_comment", local: true do |f| %>
       <%= f.text_area :text, class: "comment-box form-control", placeholder: "コメントを入力…" %><br>
       <%= f.submit "送信", class: "send btn btn-primary btn-lg btn-block" %>
     <% end %>
