@@ -1,0 +1,35 @@
+<%= form_with model: @log, local: true do |f| %>
+  <%= f.label "練習日" %><br>
+  <div class="container">
+    <div class="form-group">
+      <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+        <%= f.text_field :practice_day, class: "form-control datetimepicker-input text-center" %>
+          <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+        $('#datetimepicker4').datetimepicker({
+            format: 'L'
+        });
+      });
+    </script>
+  </div>
+  <%= f.label "練習時間（分）" %><br>
+  <%= f.label "サーブ" %>
+  <%= f.text_field :serve, size: 8, style: "text-align: right;" %>&emsp;
+  <%= f.label "スマッシュ" %>
+  <%= f.text_field :smash, size: 8, style: "text-align: right;" %>&emsp;
+  <%= f.label "ボレー" %>
+  <%= f.text_field :volley, size: 8, style: "text-align: right;" %>&emsp;
+  <%= f.label "ストローク" %>
+  <%= f.text_field :stroke, size: 8, style: "text-align: right;" %>&emsp;
+  <%= f.label "ゲーム形式" %>
+  <%= f.text_field :game, size: 8, style: "text-align: right;" %><br><br>
+  <%= f.label "練習メモ" %><br>
+  <%= f.text_area :text, rows: 10, cols: 60 %><br>
+  <%= f.file_field :image %>
+  <%= f.submit "記録する", class: "btn btn-primary btn-lg" %>
+<% end %>
