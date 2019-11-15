@@ -6,9 +6,18 @@ body {
   padding-top: 56px;
 }
 
+.navbar {
+  background-color: #FFFF33;
+}
+
 .dropdown-menu {
   background-color: $white;
   text-align: center;
+}
+
+.easy-login {
+  border: groove 1px black;
+  border-radius: 5px;
 }
 
 .card-columns {

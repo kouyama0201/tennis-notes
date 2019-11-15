@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <a class="navbar-brand mb-0 h1" href="/">Tennis Notes</a>
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
@@ -28,7 +28,7 @@
             <%= form_for(User.create, url: user_session_path) do |f| %>
               <%= f.hidden_field :email, value: "test@example.com" %>
               <%= f.hidden_field :password, value: "123456" %>
-              <%= f.submit "簡単ログイン", class:"nav-item active btn center-block btn-info" %>
+              <%= f.submit "簡単ログイン", class:"nav-item active btn" %>
             <% end %>
           </div>
         <% end %>
