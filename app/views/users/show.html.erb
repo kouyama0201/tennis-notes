@@ -3,3 +3,10 @@
     <%= render partial: 'logs/log', locals: { log: log } %>
   <% end %>
 <%= paginate(@log) %>
+
+<span id="user_<%= @user.id %>" class="follow-wrapper">
+    <%= render partial: 'follow_form', locals: { user: @user } if signed_in? %>
+</span>
+<h4>
+  <%= render 'stats' %>
+</h4>
