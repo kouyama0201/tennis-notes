@@ -55,6 +55,19 @@ body {
   max-width: 400px;
 }
 
+.practice-info {
+  display: inline-block;
+  height: 110px;
+  width: 100vw;
+  color: $white;
+  margin-top: 20px;
+}
+
+.practice-person {
+  color: $white;
+  text-decoration-line: underline;
+}
+
 .practice-memo {
   display: inline-block;
   min-height: 320px;
