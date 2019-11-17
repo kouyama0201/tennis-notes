@@ -3,13 +3,14 @@
 転職活動用のポートフォリオとして作成致しました。
 
 # 機能一覧
+* ユーザー登録・ログイン機能(devise)
 * 練習記録投稿機能(CRUD)
-* 練習記録画像投稿機能(carriewave)
+* 画像投稿機能(carriewave)
 * 練習記録詳細画面でのグラフ表示機能(Chartkick)
 * 練習記録へのコメント投稿・削除機能(Ajax)
 * いいね機能(Ajax)
-* 練習記録一覧画面でのページネーション機能(kaminari)
-* ユーザー登録・ログイン機能(devise)
+* ユーザーフォロー機能(Ajax)
+* ページネーション機能(kaminari)
 
 # 使用技術
 * Ruby 2.6.3
@@ -18,13 +19,9 @@
 * Sass,Bootstrap,jQuery
 * Git,GitHub
 
-# 未実装機能
-* ユーザーフォロー機能
-* 投稿機能のバリデーション
-
-# 未実装インフラ系
+# 未実装
 * Rubocup
 * RSpec
 * AWS
 * Docker
-* CircleCI/CDパイプライン構築
+* CircleCI
