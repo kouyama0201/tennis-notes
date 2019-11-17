@@ -111,6 +111,35 @@ body {
   }
 }
 
+.form-left {
+  float: left;
+  background-color: $white;
+  color: $gray;
+  height: 550px;
+  width: 300px;
+  padding-top: 10px;
+  margin-left: 270px;
+  border-radius: 5px;
+  &__day {
+  padding: 0 30px 0 50px;
+  }
+  &__times {
+    display: inline-grid;
+    padding-top: 15px;
+  }
+}
+
+.form-right {
+  float: right;
+  background-color: $white;
+  color: $gray;
+  height: 550px;
+  width: 605px;
+  padding-top: 10px;
+  margin-right: 260px;
+  border-radius: 5px;
+}
+
 .follow-list {
   display: inline-grid;
   min-width: 200px;
