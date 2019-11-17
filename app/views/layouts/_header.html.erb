@@ -1,40 +1,37 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-info fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <a class="navbar-brand mb-0 h1" href="/">Tennis Notes</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
-      <% if user_signed_in? %>
-        <div class="dropdown">
-        <ul class="nav-item active nav-link dropdown-toggle" style="cursor: pointer;" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=current_user.name %></ul>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><%= link_to "マイページ", user_path(current_user), method: :get, class: "nav-item active" %></li>
-          <li><%= link_to "ユーザー設定", edit_user_registration_path, method: :get, class: "nav-item active" %></li>
-        </ul>
-        </div>
-        <li class="nav-item active">
-          <%= link_to '新規投稿', new_log_path, method: :get, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
-        </li>
-      <% else %>
-        <li class="nav-item active">
-          <%= link_to 'ログイン', new_user_session_path, method: :get, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to '新規アカウント', new_user_registration_path, method: :get, class: "nav-link" %>
-        </li>
-        <div class="easy-login">
-          <%= form_for(User.create, url: user_session_path) do |f| %>
-            <%= f.hidden_field :email, value: "test@example.com" %>
-            <%= f.hidden_field :password, value: "123456" %>
-            <%= f.submit "簡単ログイン", class:"nav-item active btn center-block btn-info"%>
-          <% end %>
-        </div>
-      <% end %>
+        <% if user_signed_in? %>
+          <div class="dropdown">
+            <ul class="nav-item active nav-link dropdown-toggle" style="cursor: pointer;" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=current_user.name %></ul>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><%= link_to "マイページ", user_path(current_user), method: :get, class: "nav-item active" %></li>
+              <li><%= link_to "ユーザー設定", edit_user_registration_path, method: :get, class: "nav-item active" %></li>
+            </ul>
+          </div>
+          <li class="nav-item active">
+            <%= link_to '新規投稿', new_log_path, method: :get, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item active">
+            <%= link_to 'ログイン', new_user_session_path, method: :get, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to '新規アカウント', new_user_registration_path, method: :get, class: "nav-link" %>
+          </li>
+          <div class="easy-login">
+            <%= form_for(User.create, url: user_session_path) do |f| %>
+              <%= f.hidden_field :email, value: "test@example.com" %>
+              <%= f.hidden_field :password, value: "123456" %>
+              <%= f.submit "簡単ログイン", class:"nav-item active btn" %>
+            <% end %>
+          </div>
+        <% end %>
       </ul>
     </div>
   </nav>

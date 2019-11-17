@@ -6,9 +6,18 @@ body {
   padding-top: 56px;
 }
 
+.navbar {
+  background-color: #FFFF66;
+}
+
 .dropdown-menu {
   background-color: $white;
   text-align: center;
+}
+
+.easy-login {
+  border: groove 1px black;
+  border-radius: 5px;
 }
 
 .card-columns {
@@ -20,7 +29,7 @@ body {
   padding: 10px 20px 5px;
 }
 
-.day {
+.practice-day {
   margin: 0 0 5px;
 }
 
@@ -44,6 +53,19 @@ body {
 
 .container {
   max-width: 400px;
+}
+
+.practice-info {
+  display: inline-block;
+  height: 110px;
+  width: 100vw;
+  color: $white;
+  margin-top: 20px;
+}
+
+.practice-person {
+  color: $white;
+  text-decoration-line: underline;
 }
 
 .practice-memo {
@@ -87,6 +109,14 @@ body {
     text-align: left;
     font-size: 18px;
   }
+}
+
+.follow-list {
+  display: inline-grid;
+  min-width: 200px;
+  background-color: $white;
+  border-radius: 5px;
+  font-size: 24px;
 }
 
 .pagination {
