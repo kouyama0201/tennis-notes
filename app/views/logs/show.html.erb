@@ -33,7 +33,7 @@
           <%= comment.text %>
           <% if user_signed_in? && comment.user_id == current_user.id %>
             <%= link_to "", class: "comment-destroy" do %>
-              <i class="fa fa-times-circle"></i>
+              <i class="fas fa-times-circle"></i>
             <% end %>
           <% end %>
         </p>

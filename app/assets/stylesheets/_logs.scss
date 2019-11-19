@@ -25,8 +25,12 @@ body {
   border-radius: 5px;
 }
 
-.card-columns {
+.card {
   display: inline-flex;
+  width: 255px;
+  background-color: #343A40;
+  border: solid 1px $white;
+  margin:0 15px 30px;
 }
 
 .card-header {
@@ -39,12 +43,23 @@ body {
 }
 
 .card-body {
-  padding: 15px 20px 5px;
+  padding: 10px 0 5px;
+  border-top: solid 1px $white;
+}
+
+.book-icon {
+  color: $white;
+  font-size: 30px;
+  line-height: 35px;
 }
 
 .card-text {
-  line-height: 35px;
   margin: 0;
+}
+
+.comment-count {
+  padding-right: 10px;
+  letter-spacing: 1px;
 }
 
 .likes {
@@ -54,6 +69,16 @@ body {
 
 .vertical_like {
   color: $white;
+}
+
+.edit-icon {
+  color: $white;
+  padding: 0 5px 0 19px;
+}
+
+.destroy-icon {
+  color: $white;
+  padding-left: 5px;
 }
 
 .container {
