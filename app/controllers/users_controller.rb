@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @name = @user.name
-    @log = @user.logs.page(params[:page]).per(6).order("created_at DESC")
+    @log = @user.logs.page(params[:page]).per(8).order("created_at DESC")
   end
 
   def following
