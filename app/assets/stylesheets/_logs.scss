@@ -1,5 +1,5 @@
 body {
-  background-image: image-url("tennis-court.jpeg");
+  background-image: image-url("tennis-image.jpeg");
   background-size: 100%;
   text-align: center;
   color: $white;
@@ -85,6 +85,11 @@ body {
   max-width: 400px;
 }
 
+.practice {
+  background-image: image-url("tennis-court.jpeg");
+  background-size: 100%;
+}
+
 .practice-info {
   display: inline-block;
   height: 110px;
@@ -123,8 +128,8 @@ body {
 
 .comments {
   display: inline-block;
-  max-height: 450px;
-  width: 550px;
+  max-height: 460px;
+  width: 650px;
   background-color: $white;
   border-radius: 5px;
   overflow: scroll;
