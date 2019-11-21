@@ -73,5 +73,5 @@ gem 'devise'
 gem "chartkick"
 gem 'momentjs-rails'
 gem 'bootstrap4-datetime-picker-rails'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass'
 gem 'nokogiri'

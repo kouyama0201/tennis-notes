@@ -2,7 +2,7 @@ class LogsController < ApplicationController
   before_action :set_log, only: [:edit, :show]
 
   def index
-    @log = Log.includes(:user).page(params[:page]).per(6).order("created_at DESC")
+    @log = Log.includes(:user).page(params[:page]).per(8).order("created_at DESC")
   end
 
   def new
