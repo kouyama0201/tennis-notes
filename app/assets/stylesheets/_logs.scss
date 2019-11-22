@@ -16,14 +16,16 @@ body {
   font-weight: bold;
 }
 
-.dropdown-menu {
-  background-color: $white;
-  text-align: center;
+.my-page {
+  color: black;
+  padding: 8px 10px;
+  font-weight: bold;
+  text-decoration-line: underline;
 }
 
-.easy-login {
-  border: groove 1px black;
-  border-radius: 5px;
+.header-list {
+  color: black;
+  padding: 8px 10px;
 }
 
 .main-info {
