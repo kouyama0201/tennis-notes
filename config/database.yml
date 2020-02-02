@@ -51,4 +51,5 @@ production:
   <<: *default
   database: tennis-notes_production
   username: tennis-notes
-  password: <%= ENV['TENNIS-PRACTICE-PLUS_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
