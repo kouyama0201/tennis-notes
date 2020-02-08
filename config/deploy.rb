@@ -19,6 +19,8 @@ set :keep_releases, 5
 
 set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
+set :deploy_to, '/var/www/rails/tennis-notes'
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
