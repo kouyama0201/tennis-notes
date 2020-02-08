@@ -21,7 +21,7 @@ set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
 set :deploy_to, '/var/www/rails/tennis-notes'
 
-set :log_level, :debug
+set :format, :pretty
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
