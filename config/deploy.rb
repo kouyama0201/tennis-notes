@@ -8,7 +8,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.6.3'
-set :rbenv_path, '/home/ec2-user/.rbenv/'
 
 set :ssh_options, auth_methods: ['publickey'],
                   keys: ['~/.ssh/tennis-notes.pem'] 
