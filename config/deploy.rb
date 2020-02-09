@@ -19,8 +19,6 @@ set :keep_releases, 5
 
 set :linked_files, fetch(:linked_files, []).push("config/master.key")
 
-set :format, :pretty
-
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
