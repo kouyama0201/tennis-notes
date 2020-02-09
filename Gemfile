@@ -47,6 +47,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
+  gem 'therubyracer', platforms: :ruby
 end
 
 group :development do
