@@ -20,7 +20,6 @@ https://www.tennis-notes.com/
 # 使用技術
 * Ruby 2.5.1
 * Ruby on Rails 5.2.3
-* MySQL 5.6.43
 * Sass,Bootstrap,jQuery
 * Git,GitHub
 * Unicorn
