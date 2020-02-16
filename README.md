@@ -18,10 +18,7 @@
 * MySQL 5.6.43
 * Sass,Bootstrap,jQuery
 * Git,GitHub
-
-# 未実装
-* Rubocup
-* RSpec
-* AWS
-* Docker
-* CircleCI
+* Unicorn
+* Nginx
+* Capistrano
+* AWS(VPC, EC2, RDS, ALB, Route53, ACM, S3)
