@@ -18,7 +18,7 @@ https://www.tennis-notes.com/
 * ページネーション機能(kaminari)
 
 # 使用技術
-* Ruby 2.6.3
+* Ruby 2.5.1
 * Ruby on Rails 5.2.3
 * MySQL 5.6.43
 * Sass,Bootstrap,jQuery
