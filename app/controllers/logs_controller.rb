@@ -16,7 +16,7 @@ class LogsController < ApplicationController
 
   def destroy
     log = Log.find(params[:id])
-    log.destroy if log.user_id === current_user.id
+    log.destroy if log.user_id == current_user.id
     redirect_back(fallback_location: root_path, notice: '投稿を削除しました。')
   end
 
