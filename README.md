@@ -5,7 +5,8 @@
 # URL
 https://www.tennis-notes.com/
 
-画面右上の"簡単ログイン"ボタンから全機能をお試しいただけます。
+画面右上の"簡単ログイン"ボタンから全機能をお試しいただけます。<br>
+テストユーザーのユーザー情報は編集できません。
 
 # 機能一覧
 * ユーザー登録・ログイン機能(devise)
@@ -22,6 +23,7 @@ https://www.tennis-notes.com/
 * Ruby on Rails 5.2.3
 * Sass, Bootstrap, jQuery
 * Git, GitHub
+* Rubocop
 * Unicorn
 * Nginx
 * Capistrano
