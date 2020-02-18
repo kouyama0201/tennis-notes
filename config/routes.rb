@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   }
   root 'logs#index'
   resources :logs do
-    resources :comments, only: [:create, :destroy]
-    resources :likes, only: [:create, :destroy]
+    resources :comments, only: %i[create destroy]
+    resources :likes, only: %i[create destroy]
   end
 
   resources :users, only: [:show] do
@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: %i[create destroy]
 end

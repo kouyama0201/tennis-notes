@@ -15,6 +15,7 @@ class LikesController < ApplicationController
   end
 
   private
+
   def set_log
     @log = Log.find(params[:log_id])
   end

@@ -3,7 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  before_action :forbid_test_user, only: [:edit,:update,:destroy]
+  before_action :forbid_test_user, only: %i[edit update destroy]
 
   # GET /resource/sign_up
   # def new
@@ -61,10 +61,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   private
+
   def forbid_test_user
-      if @user.email == "test@example.com"
-        flash[:alert] = "テストユーザーのため変更できません"
-        redirect_to root_path
-      end
+    return @user.email unless "test@example.com"
+
+    redirect_to root_path, alert: "テストユーザーのため変更できません"
   end
 end
