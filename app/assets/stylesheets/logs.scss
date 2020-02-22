@@ -2,7 +2,7 @@ body {
   background-image: image-url("tennis-image.jpeg");
   background-size: 100%;
   text-align: center;
-  color: $white;
+  color: #F5F5F5;
   padding-top: 56px;
   font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ','ＭＳ Ｐゴシック','MS PGothic';
 }
@@ -36,7 +36,7 @@ body {
   display: inline-flex;
   width: 255px;
   background-color: #343A40;
-  border: solid 1px $white;
+  border: solid 1px #F5F5F5;
   margin:0 15px 30px;
 }
 
@@ -51,11 +51,11 @@ body {
 
 .card-body {
   padding: 10px 0 5px;
-  border-top: solid 1px $white;
+  border-top: solid 1px #F5F5F5;
 }
 
 .book-icon {
-  color: $white;
+  color: #F5F5F5;
   font-size: 30px;
   line-height: 35px;
 }
@@ -75,16 +75,16 @@ body {
 }
 
 .vertical_like {
-  color: $white;
+  color: #F5F5F5;
 }
 
 .edit-icon {
-  color: $white;
+  color: #F5F5F5;
   padding: 0 5px 0 19px;
 }
 
 .destroy-icon {
-  color: $white;
+  color: #F5F5F5;
   padding-left: 5px;
 }
 
@@ -101,12 +101,12 @@ body {
   display: inline-block;
   height: 110px;
   width: 100vw;
-  color: $white;
+  color: #F5F5F5;
   margin-top: 20px;
 }
 
 .practice-person {
-  color: $white;
+  color: #F5F5F5;
   text-decoration-line: underline;
 }
 
@@ -114,18 +114,18 @@ body {
   display: inline-block;
   min-height: 320px;
   width: 750px;
-  background-color: $white;
+  background-color: #F5F5F5;
   border-radius: 5px;
   &__header {
-    color: $gray;
+    color: #555555;
     padding-top: 10px;
   }
   &__body {
     display: inline;
-    color: $light_gray;
+    color: #555555;
     line-height: 1.8;
     font-size: 18px;
-    border-bottom: dotted 0.5px $light_gray;
+    border-bottom: dotted 0.5px #555555;
   }
 }
 
@@ -137,16 +137,16 @@ body {
   display: inline-block;
   max-height: 460px;
   width: 650px;
-  background-color: $white;
+  background-color: #F5F5F5;
   border-radius: 5px;
   overflow: scroll;
   &__header {
-    color: $gray;
+    color: #555555;
     padding-top: 10px;
     text-align: center;
   }
   &__text {
-    color: $light_gray;
+    color: #555555;
     padding: 0 5px 0 15px;
     text-align: left;
     font-size: 18px;
@@ -155,8 +155,8 @@ body {
 
 .form-left {
   float: left;
-  background-color: $white;
-  color: $gray;
+  background-color: #F5F5F5;
+  color: #555555;
   height: 550px;
   width: 300px;
   padding-top: 10px;
@@ -187,8 +187,8 @@ body {
 
 .form-right {
   float: right;
-  background-color: $white;
-  color: $gray;
+  background-color: #F5F5F5;
+  color: #555555;
   height: 550px;
   width: 605px;
   padding-top: 10px;
@@ -199,13 +199,13 @@ body {
 .follow-list {
   display: inline-grid;
   min-width: 200px;
-  background-color: $white;
+  background-color: #F5F5F5;
   border-radius: 5px;
   font-size: 24px;
 }
 
 .follow {
-  color: $white;
+  color: #F5F5F5;
   text-decoration-line: underline;
 }
 
