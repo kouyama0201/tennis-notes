@@ -7,3 +7,21 @@
 @import "./reset";
 @import "./variable";
 @import "./logs";
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0098E8;
+}
+
+input.invalid,
+textarea.invalid {
+  border: solid 1px #EA352D;
+}
+
+input.valid,
+textarea.valid {
+  border: solid 1px #3CB371;
+}

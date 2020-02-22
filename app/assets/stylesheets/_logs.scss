@@ -163,11 +163,25 @@ body {
   margin-left: 270px;
   border-radius: 5px;
   &__day {
-  padding: 0 30px 0 50px;
+    height: 70px;
+    padding: 0 30px 0 50px;
   }
   &__times {
-    display: inline-grid;
-    padding-top: 21px;
+    display: inline-table;
+    padding-top: 22px;
+    &__wrap{
+      height: 84px;
+      &__list {
+        display: block;
+        &--field {
+          width: 110px;
+          text-align: right;
+          border: solid 1px #D3D3D3;
+          border-radius: 3px;
+          padding: 0 8px;
+        }
+      }
+    }
   }
 }
 
@@ -197,4 +211,14 @@ body {
 
 .pagination {
   justify-content: center;
+}
+
+#log_practice_day-error,
+#log_serve-error,
+#log_smash-error,
+#log_volley-error,
+#log_stroke-error,
+#log_game-error {
+  color: #ea352d;
+  font-size: 12px;
 }
