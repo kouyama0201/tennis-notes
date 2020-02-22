@@ -10,8 +10,13 @@ class LogsController < ApplicationController
   end
 
   def create
-    Log.create(log_params)
-    redirect_to root_path, notice: '投稿しました。'
+    @log = Log.new(log_params)
+    if @log.valid?
+      @log.save
+      redirect_to root_path, notice: '投稿しました。'
+    else
+      render new_log_path(@log)
+    end
   end
 
   def destroy

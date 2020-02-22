@@ -63,8 +63,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def forbid_test_user
-    return @user.email unless "test@example.com"
-
-    redirect_to root_path, alert: "テストユーザーのため変更できません"
+    if @user.email == "test@example.com"
+      redirect_to root_path, alert: "テストユーザーのため変更できません"
+    end
   end
 end

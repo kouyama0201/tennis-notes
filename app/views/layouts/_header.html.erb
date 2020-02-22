@@ -18,9 +18,9 @@
           <% end %>
           <%= link_to 'ログイン', new_user_session_path, method: :get, class: "header-list" %>
           <div class="easy-login">
-            <%= form_for(User.create, url: user_session_path) do |f| %>
-              <%= f.hidden_field :email, value: "test@example.com" %>
-              <%= f.hidden_field :password, value: "123456" %>
+            <%= form_for(User.create, url: user_session_path, html: {class: "easy-form", id: "easy-form"}) do |f| %>
+              <%= f.hidden_field :email, value: "test@example.com", id: "easy-email" %>
+              <%= f.hidden_field :password, value: "123456", id: "easy-password" %>
               <%= f.submit "簡単ログイン", class:"btn btn-dark" %>
             <% end %>
           </div>
