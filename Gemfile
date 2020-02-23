@@ -46,7 +46,9 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
   gem 'ed25519'
+  gem 'factory_bot_rails'
   gem 'pry-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
