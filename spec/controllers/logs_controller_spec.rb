@@ -25,7 +25,7 @@ describe LogsController do
     it "@logはcreated_atの降順に正しくアサインされるか" do
       log = create_list(:log, 3)
       get :index
-      expect(assigns(:log)).to match(log.sort{|a, b| b.created_at <=> a.created_at })
+      expect(assigns(:log)).to match(log.sort{ | a, b | b.created_at <=> a.created_at })
     end
 
     it "indexアクションのページに遷移するか" do
