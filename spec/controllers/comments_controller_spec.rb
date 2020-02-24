@@ -1,6 +1,5 @@
 require 'rails_helper'
-
-describe CommentsController, type: :controller do
+describe CommentsController do
   let(:user) { create(:user) }
   let(:log) { create(:log, user_id: user.id) }
   let(:comment) { create(:comment, log_id: log.id, user_id: user.id) }
