@@ -153,7 +153,7 @@ describe LogsController do
             delete :destroy, params: { id: log.id }
           }.not_to change(Log, :count)
         end
-  
+
         it "トップページにリダイレクトすること" do
           log = create(:log)
           delete :destroy, params: { id: log.id }
