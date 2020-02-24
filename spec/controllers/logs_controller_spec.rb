@@ -98,7 +98,7 @@ describe LogsController do
       context 'セーブが失敗した場合' do
         it '練習記録が登録されないこと' do
           log = { log: attributes_for(:log, practice_day: "") }
-          expect { 
+          expect {
             post :create, params: log
           }.not_to change(Log, :count)
         end
@@ -114,7 +114,7 @@ describe LogsController do
     context '未ログイン時' do
       it "練習記録が登録されないこと" do
         log = { log: attributes_for(:log) }
-        expect { 
+        expect {
           post :create, params: log
         }.not_to change(Log, :count)
       end
