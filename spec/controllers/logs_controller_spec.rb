@@ -98,7 +98,7 @@ describe LogsController do
       context 'セーブが失敗した場合' do
         it '練習記録が登録されないこと' do
           log = { log: attributes_for(:log, practice_day: "") }
-          expect{ 
+          expect { 
             post :create, params: log
           }.not_to change(Log, :count)
         end
@@ -114,7 +114,7 @@ describe LogsController do
     context '未ログイン時' do
       it "練習記録が登録されないこと" do
         log = { log: attributes_for(:log) }
-        expect{ 
+        expect { 
           post :create, params: log
         }.not_to change(Log, :count)
       end
@@ -135,7 +135,7 @@ describe LogsController do
 
       it "練習記録が削除されること" do
         log = create(:log, user_id: user.id)
-        expect{
+        expect {
           delete :destroy, params: { id: log.id }
         }.to change(Log, :count).by(-1)
       end
@@ -149,7 +149,7 @@ describe LogsController do
       context 'ユーザーが異なる場合' do
         it "練習記録が削除されないこと" do
           log = create(:log)
-          expect{
+          expect {
             delete :destroy, params: { id: log.id }
           }.not_to change(Log, :count)
         end
@@ -165,7 +165,7 @@ describe LogsController do
     context '未ログイン時' do
       it "練習記録が削除されないこと" do
         log = create(:log, user_id: user.id)
-        expect{
+        expect {
           delete :destroy, params: { id: log.id }
         }.not_to change(Log, :count)
       end
@@ -215,7 +215,7 @@ describe LogsController do
       context '更新に成功した場合' do
         it "練習記録が更新されること" do
           log = create(:log)
-          expect{
+          expect {
             patch :update, params: {
               id: log.id, serve: 20
             }
@@ -234,7 +234,7 @@ describe LogsController do
       context '更新に失敗した場合' do
         it "練習記録が更新されないこと" do
           log = create(:log)
-          expect{
+          expect {
             patch :update, params: {
               id: log.id, serve: ""
             }
