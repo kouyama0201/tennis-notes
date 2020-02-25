@@ -24,6 +24,7 @@ https://www.tennis-notes.com/
 * Sass, Bootstrap, jQuery
 * Git, GitHub
 * Rubocop
+* RSpec
 * Unicorn
 * Nginx
 * Capistrano
