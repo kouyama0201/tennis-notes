@@ -370,7 +370,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   capistrano3-unicorn
-  capybara (>= 2.15)
+  capybara
   carrierwave
   chartkick
   coffee-rails (~> 4.2)
