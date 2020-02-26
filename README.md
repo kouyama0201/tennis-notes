@@ -17,6 +17,7 @@ https://www.tennis-notes.com/
 * いいね機能(Ajax)
 * ユーザーフォロー機能(Ajax)
 * ページネーション機能(kaminari)
+* 単体テスト、統合テスト(RSpec)
 
 # 使用技術
 * Ruby 2.5.1
