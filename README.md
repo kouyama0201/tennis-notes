@@ -30,3 +30,6 @@ https://www.tennis-notes.com/
 * Nginx
 * Capistrano
 * AWS(VPC, EC2, RDS, ALB, Route53, ACM, S3)
+
+# AWSアーキテクチャ図
+![tennis-notes AWS](https://user-images.githubusercontent.com/54708394/75516447-db7c0900-5a3f-11ea-8644-82725b76076c.jpeg)
