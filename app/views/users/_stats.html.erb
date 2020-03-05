@@ -1,16 +1,24 @@
 <% @user ||= current_user %>
 <div class="stats">
+  <a class="posts" href="<%= user_path(@user) %>">
+    <strong>
+      <%= @user.logs.count %>
+    </strong>
+    投稿
+  </a>
+  &nbsp;
   <a class="follow" href="<%= following_user_path(@user) %>">
-    <strong id="following" class="stat">
+    <strong class="stat" id="following">
       <%= @user.followings.count %>
     </strong>
     フォロー
   </a>
   &nbsp;
   <a class="follow" href="<%= followers_user_path(@user) %>">
-    <strong id="followers" class="stat">
+    <strong class="stat" id="followers">
       <%= @user.followers.count %>
     </strong>
     フォロワー
   </a>
 </div>
+<%= render 'layouts/sidebar' %>

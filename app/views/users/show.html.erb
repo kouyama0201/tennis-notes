@@ -1,10 +1,19 @@
-<br><h3>ユーザー：＜<%= @name %>＞
-<span id="user_<%= @user.id %>" class="d-inline-flex">
-  <%= render 'follow_form', user: @user if signed_in? %>
-</span></h3>
-<h4><%= render 'stats' %></h4><br>
-<h4>投稿一覧</h4>
-  <% @log.each do |log| %>
-    <%= render partial: 'logs/log', locals: { log: log } %>
-  <% end %>
-<%= paginate(@log) %>
+<div class="wrapper">
+  <div class="wrapper__user">
+    <br><h3>ユーザー：＜<%= @name %>＞
+    <span id="user_<%= @user.id %>" class="d-inline-flex">
+      <%= render 'follow_form', user: @user if signed_in? %>
+    </span></h3>
+    <%= render 'stats' %><br>
+    <h5>投稿一覧</h5>
+
+    <div class="main-content">
+      <div class="main-content__cards">
+        <% @log.each do |log| %>
+          <%= render partial: 'logs/log', locals: { log: log } %>
+        <% end %>
+        <%= paginate(@log) %>
+      </div>
+    </div>
+  </div>
+</div>
