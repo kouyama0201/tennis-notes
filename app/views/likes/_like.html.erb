@@ -9,7 +9,7 @@
   <% else %>
     <%= link_to log_likes_path(log.id), method: :post, remote: true do %>
       <div class="vertical_like">
-        <i class="far fa-thumbs-up" style="color: gray;"></i>
+        <i class="far fa-thumbs-up"></i>
           <span><%= log.likes_count %></span>
       </div>
     <% end %>
