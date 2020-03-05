@@ -1,5 +1,5 @@
 <div class="card">
-  <h5 class="card-header">投稿者：<%= log.user.name %></h5>
+  <h5 class="card-writer">投稿者：<%= log.user.name %></h5>
   <p class="practice-day">練習日：<%= log.practice_day %></p>
     <div class="card-body">
       <%= link_to log_path(log.id), class: "book-icon" do %>
