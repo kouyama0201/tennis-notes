@@ -1,10 +1,25 @@
-<div class="main-info">
-  <p>Tennis Notesは日々の練習を記録して共有し、練習内容について、ユーザー同士で意見交換し合えるアプリです。</p>
-  <p>日頃の積み重ねを可視化する事で、モチベーションにも繋がります。</p>
-  <p>日々の練習をより濃いものとし、ライバルに差を付けましょう！</p>
-</div>
-
-<% @log.each do |log| %>
-  <%= render partial: 'log', locals: { log: log } %>
+<% unless user_signed_in? %>
+  <div class="main-info">
+    <%= image_tag "tennis-image.jpeg", height: 395, width: 1440 %>
+    <pre class="main-info__text">
+      Tennis Notesは日々の練習を記録して共有し、
+      練習内容について、ユーザー同士で意見交換し合えるアプリです。
+      日頃の積み重ねを可視化する事で、モチベーションにも繋がります。
+      日々の練習をより濃いものとし、ライバルに差を付けましょう！
+    </pre>
+  </div>
 <% end %>
-<%= paginate(@log) %>
+
+<div class="main-content">
+  <div class="main-content__cards">
+    <% @log.each do |log| %>
+      <%= render partial: 'log', locals: { log: log } %>
+    <% end %>
+    <%= paginate(@log) %>
+  </div>
+  <% if user_signed_in? %>
+    <%= render 'layouts/sidebar' %>
+  <% else %>
+    <%= image_tag "tennis-arena.jpeg", width: 440 %>
+  <% end %>
+</div>
