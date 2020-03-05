@@ -6,12 +6,12 @@
 
   <div class="form-group">
     <%= f.label "ユーザー名" %><br />
-    <%= f.text_field :name, class: "form-control", placeholder: "Enter your name", autofocus: true %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Enter your name" %>
   </div>
 
   <div class="form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, class: "form-control", placeholder: "Enter email", autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, class: "form-control", placeholder: "Enter email", autocomplete: "email" %>
   </div>
 
   <div class="form-group">
@@ -28,7 +28,7 @@
   </div><br>
 
   <div class="actions">
-    <%= f.submit "新規アカウント作成", class: "btn btn-primary btn-lg btn-block" %>
+    <%= f.submit "新規アカウント作成", class: "btn btn-primary btn btn-block" %>
   </div>
   <% end %><br><br>
   
