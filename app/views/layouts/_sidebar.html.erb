@@ -1,0 +1,11 @@
+<div class="side-bar">
+  <%= link_to "TOP", root_path, class: "side-bar__list top" %>
+  <%= link_to "新規投稿", new_log_path, class: "side-bar__list new" %>
+  <%= link_to "#{current_user.logs.count} 公開中の投稿", user_path(current_user), class: "side-bar__list user" %>
+  <%= link_to "非公開の投稿", user_path(current_user), class: "side-bar__list" %>
+  <%= link_to "いいね！した記事", root_path, class: "side-bar__list" %>
+  <%= link_to "#{current_user.followings.count} フォロー中", following_user_path(current_user), class: "side-bar__list following" %>
+  <%= link_to "#{current_user.followers.count} フォロワー", followers_user_path(current_user), class: "side-bar__list followers" %>
+  <%= link_to "ユーザー情報編集", edit_user_registration_path, class: "side-bar__list user-edit" %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "side-bar__list" %>
+</div>
