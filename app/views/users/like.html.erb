@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="wrapper__user">
+    <br><h3>ユーザー：＜<%= @user.name %>＞
+    <span id="user_<%= @user.id %>" class="d-inline-flex">
+      <%= render 'follow_form', user: @user if signed_in? %>
+    </span></h3>
+    <%= render 'stats' %><br>
+    <h5>いいね！した投稿</h5>
+
+    <div class="main-content">
+      <div class="main-content__cards">
+        <% @like.each do |log| %>
+          <%= render partial: 'logs/log', locals: { log: log } %>
+        <% end %>
+        <%= paginate(@like) %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/sidebar' %>
