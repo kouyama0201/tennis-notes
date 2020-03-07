@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="wrapper__user">
-    <br><h3>ユーザー：＜<%= @name %>＞
+    <br><h3>ユーザー：＜<%= @user.name %>＞
     <span id="user_<%= @user.id %>" class="d-inline-flex">
       <%= render 'follow_form', user: @user if signed_in? %>
     </span></h3>
@@ -17,3 +17,4 @@
     </div>
   </div>
 </div>
+<%= render 'layouts/sidebar' %>
