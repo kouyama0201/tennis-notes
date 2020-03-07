@@ -2,8 +2,15 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
-    @name = @user.name
-    @log = @user.logs.page(params[:page]).per(6).order("created_at DESC")
+    if @user == current_user
+      @log = @user.logs.page(params[:page]).per(6).order("created_at DESC")
+    else
+      @log = @user.logs.page(params[:page]).per(6).order("created_at DESC").where.not(status: "1")
+    end
+  end
+
+  def like
+    @like = @user.like_logs.page(params[:page]).per(6).order("created_at DESC")
   end
 
   def following
