@@ -1,6 +1,6 @@
 <% unless user_signed_in? %>
   <div class="main-info">
-    <%# <%= image_tag "tennis-image.jpeg", size: "1440x395" %> %>
+    <%= image_tag "tennis-image.jpeg", height: 395, width: 1440 %>
     <pre class="main-info__text">
       Tennis Notesは日々の練習を記録して共有し、
       練習内容について、ユーザー同士で意見交換し合えるアプリです。
@@ -21,7 +21,7 @@
     <% if user_signed_in? %>
       <%= render 'layouts/sidebar' %>
     <% else %>
-      <%# <%= image_tag "tennis-arena.jpeg", width: 440 %> %>
+      <%= image_tag "tennis-arena.jpeg", width: 440 %>
     <% end %>
   </div>
 </div>
