@@ -47,13 +47,14 @@
       <%= f.label "テニスノート（練習メモ）" %><br>
       <%= f.text_area :text, rows: 19, cols: 65 %><br>
       <%= f.file_field :image %>
+      <%= f.select :status, [["公開する", "0"],["公開しない", "1"]] %>
       <% if current_page?(new_log_path) %>
-        <%= f.submit "記録する", class: "btn btn-sm btn-primary" %>
+        <%= f.submit "記録する", class: "submit-button btn btn btn-primary" %>
       <% else %>
-        <%= f.submit "更新する", class: "btn btn-sm btn-primary" %>
+        <%= f.submit "更新する", class: "submit-button btn btn btn-primary" %>
       <% end %>
     </div>
 
-    <%= render 'layouts/sidebar' %>
   <% end %>
 </div>
+<%= render 'layouts/sidebar' %>
