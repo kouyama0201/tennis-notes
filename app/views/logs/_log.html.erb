@@ -2,8 +2,14 @@
   <h5 class="card-writer">投稿者：<%= log.user.name %></h5>
   <p class="practice-day">練習日：<%= log.practice_day %></p>
     <div class="card-body">
-      <%= link_to log_path(log.id), class: "book-icon" do %>
-        <i class="fas fa-book-open"></i>
+      <% if log.status == 0 %>
+        <%= link_to log_path(log.id), class: "book-icon" do %>
+          <i class="fas fa-book-open"></i>
+        <% end %>
+      <% elsif log.status == 1 %>
+        <%= link_to log_path(log.id), class: "book-icon" do %>
+          <i class="fas fa-book"></i>
+        <% end %>
       <% end %>
       <p class="card-text">投稿日時：<%= log.created_at %></p>
       <span class="comment-count">
