@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_16_074755) do
+ActiveRecord::Schema.define(version: 2020_03_07_022726) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_11_16_074755) do
     t.bigint "user_id"
     t.date "practice_day", null: false
     t.integer "likes_count", default: 0
+    t.integer "status"
     t.index ["user_id"], name: "index_logs_on_user_id"
   end
 
