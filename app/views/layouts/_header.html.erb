@@ -5,18 +5,18 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <%= link_to "#{current_user.name}", user_path(current_user), method: :get, class: "my-page" %>
-          <%= link_to new_log_path, method: :get, class: "header-list" do %>
+          <%= link_to new_log_path, class: "header-list" do %>
             <i class="fas fa-edit"></i>投稿
           <% end %>
-          <%= link_to edit_user_registration_path, method: :get, class: "header-list" do %>
+          <%= link_to edit_user_registration_path, class: "header-list" do %>
             <i class="fas fa-user-cog"></i>
           <% end %>
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-list" %>
         <% else %>
-          <%= link_to new_user_registration_path, method: :get, class: "header-list" do %>
+          <%= link_to new_user_registration_path, class: "header-list" do %>
             新規登録 <i class="fas fa-user"></i>
           <% end %>
-          <%= link_to 'ログイン', new_user_session_path, method: :get, class: "header-list" %>
+          <%= link_to 'ログイン', new_user_session_path, class: "header-list" %>
           <div class="easy-login">
             <%= form_for(User.create, url: user_session_path, html: {class: "easy-form", id: "easy-form"}) do |f| %>
               <%= f.hidden_field :email, value: "test@example.com", id: "easy-email" %>

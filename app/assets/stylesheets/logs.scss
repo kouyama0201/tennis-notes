@@ -1,14 +1,12 @@
 body {
-  background-image: image-url("tennis-image.jpeg");
-  background-size: 100%;
   text-align: center;
-  color: #F5F5F5;
   padding-top: 56px;
   font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ','ＭＳ Ｐゴシック','MS PGothic';
 }
 
 .navbar {
   background-color: #E4FF8D;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 .title {
@@ -29,18 +27,75 @@ body {
 }
 
 .main-info {
-  margin: 24px 0 40px;
+  position: relative;
+  height: 395px;
+  &__text {
+    position: absolute;
+    color: #F5F5F5;
+    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ','ＭＳ Ｐゴシック','MS PGothic';
+    top: 150px;
+    left: 150px;
+  }
+}
+
+.main-content {
+  background-color: #F5F5F5;
+  display: flex;
+  &__cards {
+    color: #444444;
+    padding-top: 20px;
+    width: 1000px;
+  }
+}
+
+.side-bar {
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 116px;
+  right: 80px;
+  width: 280px;
+  &__list {
+    display: block;
+    color: #333333;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 15px 0 16px;
+    border: solid 1px #EEEEEE;
+  }
+  &__list:hover {
+    background-color: #EEEEEE;
+  }
+}
+
+.wrapper {
+  background-color: #F5F5F5;
+  height: calc(100vh - 56px);
+  &__user {
+    width: 1000px;
+  }
+}
+
+.user-form {
+  display: flex;
+  background-color: #F5F5F5;
+  height: calc(100vh - 56px);
+  &__main {
+    width: 50%;
+  }
+}
+
+.form-parts {
+  height: 80px;
 }
 
 .card {
   display: inline-flex;
   width: 255px;
-  background-color: #343A40;
   border: solid 1px #F5F5F5;
-  margin:0 15px 30px;
+  margin: 0 15px 30px;
 }
 
-.card-header {
+.card-writer {
   border-bottom: none;
   padding: 10px 20px 5px;
 }
@@ -55,7 +110,7 @@ body {
 }
 
 .book-icon {
-  color: #F5F5F5;
+  color: #444444;
   font-size: 30px;
   line-height: 35px;
 }
@@ -75,16 +130,16 @@ body {
 }
 
 .vertical_like {
-  color: #F5F5F5;
+  color: #444444;
 }
 
 .edit-icon {
-  color: #F5F5F5;
+  color: #444444;
   padding: 0 5px 0 19px;
 }
 
 .destroy-icon {
-  color: #F5F5F5;
+  color: #444444;
   padding-left: 5px;
 }
 
@@ -117,15 +172,15 @@ body {
   background-color: #F5F5F5;
   border-radius: 5px;
   &__header {
-    color: #555555;
+    color: #444444;
     padding-top: 10px;
   }
   &__body {
     display: inline;
-    color: #555555;
+    color: #444444;
     line-height: 1.8;
     font-size: 18px;
-    border-bottom: dotted 0.5px #555555;
+    border-bottom: dotted 0.5px #444444;
   }
 }
 
@@ -141,30 +196,32 @@ body {
   border-radius: 5px;
   overflow: scroll;
   &__header {
-    color: #555555;
+    color: #444444;
     padding-top: 10px;
     text-align: center;
   }
   &__text {
-    color: #555555;
+    color: #444444;
     padding: 0 5px 0 15px;
     text-align: left;
     font-size: 18px;
   }
 }
 
+#log-form {
+  display: flex;
+}
+
 .form-left {
-  float: left;
   background-color: #F5F5F5;
-  color: #555555;
+  color: #444444;
   height: 550px;
   width: 300px;
   padding-top: 10px;
-  margin-left: 270px;
-  border-radius: 5px;
+  margin: 40px 0 0 80px;
   &__day {
     height: 70px;
-    padding: 0 30px 0 50px;
+    padding: 0 40px;
   }
   &__times {
     display: inline-table;
@@ -186,30 +243,39 @@ body {
 }
 
 .form-right {
-  float: right;
   background-color: #F5F5F5;
-  color: #555555;
-  height: 550px;
+  color: #444444;
   width: 605px;
   padding-top: 10px;
-  margin-right: 260px;
-  border-radius: 5px;
+  margin: 40px 0 0 10px;
+}
+
+.submit-button {
+  margin-left: 20px;
+}
+
+.posts {
+  color: #333333;
+  text-decoration-line: underline;
+}
+
+.follow {
+  color: #333333;
+  text-decoration-line: underline;
 }
 
 .follow-list {
   display: inline-grid;
+  background-color: #FFFFFF;
   min-width: 200px;
-  background-color: #F5F5F5;
   border-radius: 5px;
   font-size: 24px;
-}
-
-.follow {
-  color: #F5F5F5;
-  text-decoration-line: underline;
+  margin-top: 20px;
 }
 
 .pagination {
+  margin: 0;
+  padding-bottom: 16px;
   justify-content: center;
 }
 

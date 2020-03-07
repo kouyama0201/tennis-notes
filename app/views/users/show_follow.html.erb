@@ -1,13 +1,18 @@
-<br><h3>ユーザー：＜<%= @user.name %>＞
-<span id="user_<%= @user.id %>" class="d-inline-flex">
-  <%= render 'follow_form', user: @user if signed_in? %>
-</span></h3>
-<h4><%= render 'users/stats' %></h4><br>
-<h4><%= @title %></h4>
-<div class="follow-list">
-  <% if @users.any? %>
-    <% @users.each do |user| %>
-      <%= link_to user.name ,user_path(user) %>
-    <% end %>
-  <% end %>
+<div class="wrapper">
+  <div class="wrapper__user">
+    <br><h3>ユーザー：＜<%= @user.name %>＞
+    <span id="user_<%= @user.id %>" class="d-inline-flex">
+      <%= render 'follow_form', user: @user if signed_in? %>
+    </span></h3>
+    <%= render 'users/stats' %><br>
+    <h5><%= @title %></h5>
+    <div class="follow-list">
+      <% if @users.any? %>
+        <% @users.each do |user| %>
+          <%= link_to user.name ,user_path(user) %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
+<%= render 'layouts/sidebar' %>

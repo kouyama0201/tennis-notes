@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+
   root 'logs#index'
   resources :logs do
     resources :comments, only: %i[create destroy]
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     member do
-      get :following, :followers, :users_logs
+      get :like, :following, :followers
     end
   end
 

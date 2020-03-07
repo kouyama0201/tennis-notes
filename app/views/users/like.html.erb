@@ -5,14 +5,14 @@
       <%= render 'follow_form', user: @user if signed_in? %>
     </span></h3>
     <%= render 'stats' %><br>
-    <h5>投稿一覧</h5>
+    <h5>いいね！した投稿</h5>
 
     <div class="main-content">
       <div class="main-content__cards">
-        <% @log.each do |log| %>
+        <% @like.each do |log| %>
           <%= render partial: 'logs/log', locals: { log: log } %>
         <% end %>
-        <%= paginate(@log) %>
+        <%= paginate(@like) %>
       </div>
     </div>
   </div>

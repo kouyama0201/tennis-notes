@@ -1,9 +1,15 @@
 <div class="card">
-  <h5 class="card-header">投稿者：<%= log.user.name %></h5>
+  <h5 class="card-writer">投稿者：<%= log.user.name %></h5>
   <p class="practice-day">練習日：<%= log.practice_day %></p>
     <div class="card-body">
-      <%= link_to log_path(log.id), class: "book-icon" do %>
-        <i class="fas fa-book-open"></i>
+      <% if log.status == 0 %>
+        <%= link_to log_path(log.id), class: "book-icon" do %>
+          <i class="fas fa-book-open"></i>
+        <% end %>
+      <% elsif log.status == 1 %>
+        <%= link_to log_path(log.id), class: "book-icon" do %>
+          <i class="fas fa-book"></i>
+        <% end %>
       <% end %>
       <p class="card-text">投稿日時：<%= log.created_at %></p>
       <span class="comment-count">
@@ -13,10 +19,10 @@
         <%= render partial: 'likes/like', locals: { log: log, likes: @likes } %>
       </div>
       <% if user_signed_in? && log.user_id == current_user.id %>
-        <%= link_to "/logs/#{log.id}/edit", class: "edit-icon" do %>
+        <%= link_to log_path(log), class: "edit-icon" do %>
           <i class="fas fa-cog"></i>
         <% end %>
-        <%= link_to "/logs/#{log.id}", class: "destroy-icon", method: :delete, data: { confirm: '投稿を削除します。よろしいですか？' } do %>
+        <%= link_to log_path(log), method: :delete, class: "destroy-icon", data: { confirm: '投稿を削除します。よろしいですか？' } do %>
           <i class="fas fa-times-circle"></i>
         <% end %>
       <% end %>
