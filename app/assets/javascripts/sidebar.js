@@ -2,6 +2,8 @@ $(window).on('load', function () { // 各ページでのサイドバーのボタ
   if (document.URL.match("logs/new")) {
     $(".new").css("background-color", "#EEEEEE");
   } else if (document.URL.match(/\/logs\/\d+\/edit/)) {
+  } else if (document.URL.match(/\/users\/\d+\/like/)) {
+    $(".like").css("background-color", "#EEEEEE");
   } else if (document.URL.match(/\/users\/\d+\/following/)) {
     $(".following").css("background-color", "#EEEEEE");
   } else if (document.URL.match(/\/users\/\d+\/followers/)) {
