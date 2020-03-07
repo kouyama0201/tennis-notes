@@ -1,6 +1,6 @@
 <div class="practice">
   <div class="practice-info">
-    <h4><%= link_to "投稿者：＜#{@log.user.name}＞", "/users/#{@log.user_id}", class: "practice-person" %></h4>
+    <h4><%= link_to "投稿者：＜#{@log.user.name}＞", user_path(@log.user_id), class: "practice-person" %></h4>
     <h5>練習日：<%= @log.practice_day %></h5>
     <h5>合計練習時間：<%= @graph.sum %>分</h5>
   </div>
@@ -30,7 +30,7 @@
       <% @comments.each do |comment| %>
         <div class="comments__text" data-comment-id= "<%= comment.id %>">
           <p>
-            <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+            <strong><%= link_to comment.user.name, user_path(comment.user_id) %>：</strong>
             <%= comment.text %>
             <% if user_signed_in? && comment.user_id == current_user.id %>
               <%= link_to "", class: "comment-destroy" do %>
