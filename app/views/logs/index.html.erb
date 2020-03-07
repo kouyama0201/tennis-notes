@@ -10,16 +10,18 @@
   </div>
 <% end %>
 
-<div class="main-content">
-  <div class="main-content__cards">
-    <% @log.each do |log| %>
-      <%= render partial: 'log', locals: { log: log } %>
+<div class="wrapper">
+  <div class="main-content">
+    <div class="main-content__cards">
+      <% @log.each do |log| %>
+        <%= render partial: 'log', locals: { log: log } %>
+      <% end %>
+      <%= paginate(@log) %>
+    </div>
+    <% if user_signed_in? %>
+      <%= render 'layouts/sidebar' %>
+    <% else %>
+      <%= image_tag "tennis-arena.jpeg", width: 440 %>
     <% end %>
-    <%= paginate(@log) %>
   </div>
-  <% if user_signed_in? %>
-    <%= render 'layouts/sidebar' %>
-  <% else %>
-    <%= image_tag "tennis-arena.jpeg", width: 440 %>
-  <% end %>
 </div>
