@@ -1,44 +1,31 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  *= require tempusdominus-bootstrap-4
  */
 
+@import "reset";
 @import url('https://fonts.googleapis.com/css?family=Caveat');
 @import "bootstrap";
 @import "font-awesome-sprockets";
-@import "./font-awesome";
-@import "./flash";
-@import "./reset";
-@import "./user";
-@import "./logs";
+@import "font-awesome";
+@import "modules/*";
+
+body {
+  text-align: center;
+  padding-top: 56px;
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ','ＭＳ Ｐゴシック','MS PGothic';
+}
 
 input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
 select:focus,
 textarea:focus {
   outline: none;
   border-color: #0098E8;
 }
 
-input.invalid,
-textarea.invalid {
+input[type=text].invalid {
   border: solid 1px #EA352D;
 }
 
-input.valid,
-textarea.valid {
+input[type=text].valid {
   border: solid 1px #3CB371;
 }

@@ -1,0 +1,54 @@
+.card {
+  display: inline-flex;
+  width: 255px;
+  border: solid 1px #EEEEEE;
+  margin: 0 15px 30px;
+}
+
+.card-writer {
+  border-bottom: none;
+  padding: 10px 20px 5px;
+}
+
+.practice-day {
+  margin: 0 0 5px;
+}
+
+.card-body {
+  padding: 10px 0 5px;
+  border-top: solid 1px #F5F5F5;
+}
+
+.book-icon {
+  color: #444444;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.card-text {
+  margin: 0;
+}
+
+.comment-count {
+  padding-right: 10px;
+  letter-spacing: 1px;
+}
+
+.likes {
+  display: inline-block;
+  margin: 0;
+}
+
+.vertical_like {
+  color: #444444;
+}
+
+.edit-icon {
+  color: #444444;
+  padding: 0 5px 0 19px;
+}
+
+.destroy-icon {
+  color: #444444;
+  padding-left: 5px;
+}

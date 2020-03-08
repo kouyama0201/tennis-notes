@@ -1,3 +1,12 @@
+.user-form {
+  display: flex;
+  background-color: #F5F5F5;
+  height: calc(100vh - 56px);
+  &__main {
+    width: 50%;
+  }
+}
+
 #user_name-error,
 #user_email-error,
 #user_password-error,

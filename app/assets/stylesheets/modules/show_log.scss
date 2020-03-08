@@ -1,0 +1,60 @@
+.practice {
+  background-image: image-url("tennis-court.jpeg");
+  background-size: 100%;
+}
+
+.practice-info {
+  display: inline-block;
+  height: 110px;
+  width: 100vw;
+  color: #F5F5F5;
+  margin-top: 20px;
+}
+
+.practice-person {
+  color: #F5F5F5;
+  text-decoration-line: underline;
+}
+
+.practice-memo {
+  display: inline-block;
+  min-height: 320px;
+  width: 750px;
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  &__header {
+    color: #444444;
+    padding-top: 10px;
+  }
+  &__body {
+    display: inline;
+    color: #444444;
+    line-height: 1.8;
+    font-size: 18px;
+    border-bottom: dotted 0.5px #444444;
+  }
+}
+
+.practice-image {
+  padding-top: 20px;
+}
+
+.comments {
+  display: inline-block;
+  max-height: 460px;
+  width: 650px;
+  background-color: #F5F5F5;
+  border-radius: 5px;
+  overflow: scroll;
+  &__header {
+    color: #444444;
+    padding-top: 10px;
+    text-align: center;
+  }
+  &__text {
+    color: #444444;
+    padding: 0 5px 0 15px;
+    text-align: left;
+    font-size: 18px;
+  }
+}

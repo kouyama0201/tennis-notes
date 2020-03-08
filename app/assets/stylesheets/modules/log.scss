@@ -1,0 +1,49 @@
+.container {
+  max-width: 400px;
+}
+
+.wrapper {
+  background-color: #F5F5F5;
+  height: calc(100vh - 56px);
+  &__user {
+    width: 1000px;
+  }
+}
+
+.main-info {
+  position: relative;
+  height: 395px;
+  &__text {
+    position: absolute;
+    color: #F5F5F5;
+    font-family: 'Avenir','Helvetica Neue','Helvetica','Arial','Hiragino Sans','ヒラギノ角ゴシック','Yu Gothic','メイリオ','ＭＳ Ｐゴシック','MS PGothic';
+    top: 150px;
+    left: 150px;
+  }
+}
+
+.main-content {
+  background-color: #F5F5F5;
+  display: flex;
+  &__cards {
+    color: #444444;
+    padding-top: 20px;
+    width: 1000px;
+  }
+}
+
+.pagination {
+  margin: 0;
+  padding-bottom: 16px;
+  justify-content: center;
+}
+
+#log_practice_day-error,
+#log_serve-error,
+#log_smash-error,
+#log_volley-error,
+#log_stroke-error,
+#log_game-error {
+  color: #ea352d;
+  font-size: 12px;
+}

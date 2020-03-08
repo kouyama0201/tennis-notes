@@ -1,0 +1,49 @@
+#log-form {
+  display: flex;
+}
+
+.form-parts {
+  height: 80px;
+}
+
+.form-left {
+  background-color: #F5F5F5;
+  color: #444444;
+  height: 550px;
+  width: 300px;
+  padding-top: 10px;
+  margin: 40px 0 0 80px;
+  &__day {
+    height: 70px;
+    padding: 0 40px;
+  }
+  &__times {
+    display: inline-table;
+    padding-top: 22px;
+    &__wrap{
+      height: 84px;
+      &__list {
+        display: block;
+        &--field {
+          width: 110px;
+          text-align: right;
+          border: solid 1px #D3D3D3;
+          border-radius: 3px;
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+}
+
+.form-right {
+  background-color: #F5F5F5;
+  color: #444444;
+  width: 605px;
+  padding-top: 10px;
+  margin: 40px 0 0 10px;
+}
+
+.submit-button {
+  margin-left: 20px;
+}
