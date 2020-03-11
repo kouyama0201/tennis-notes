@@ -6,7 +6,7 @@
         <% if user_signed_in? %>
           <%= link_to "#{current_user.name}", user_path(current_user), method: :get, class: "my-page" %>
           <%= link_to new_log_path, class: "header-list" do %>
-            <i class="fas fa-pen-alt"></i> 投稿
+            <i class="fas fa-pen-alt"></i> 新規投稿
           <% end %>
           <%= link_to edit_user_registration_path, class: "header-list" do %>
             <i class="fas fa-user-cog"></i> アカウント編集
