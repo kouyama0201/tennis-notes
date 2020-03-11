@@ -13,14 +13,14 @@
       <% end %>
       <p class="card-text">投稿日時：<%= log.created_at %></p>
       <span class="comment-count">
-        <i class="fas fa-comment-dots"></i><%= log.comments.count.to_s %>件
+        <i class="far fa-comment-dots"></i><%= log.comments.count.to_s %>件
       </span>
       <div class="likes" id="likes_buttons_<%= log.id %>">
         <%= render partial: 'likes/like', locals: { log: log, likes: @likes } %>
       </div>
       <% if user_signed_in? && log.user_id == current_user.id %>
         <%= link_to edit_log_path(log), class: "edit-icon" do %>
-          <i class="fas fa-cog"></i>
+          <i class="fas fa-edit"></i>
         <% end %>
         <%= link_to log_path(log), method: :delete, class: "destroy-icon", data: { confirm: '投稿を削除します。よろしいですか？' } do %>
           <i class="fas fa-times-circle"></i>

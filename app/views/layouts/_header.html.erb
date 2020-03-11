@@ -9,14 +9,18 @@
             <i class="fas fa-pen-alt"></i> 新規投稿
           <% end %>
           <%= link_to edit_user_registration_path, class: "header-list" do %>
-            <i class="fas fa-user-cog"></i>
+            <i class="fas fa-user-cog"></i> アカウント編集
           <% end %>
-          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header-list" %>
+          <%= link_to destroy_user_session_path, method: :delete, class: "header-list" do %>
+            <i class="fas fa-sign-out-alt"></i> ログアウト
+          <% end %>
         <% else %>
           <%= link_to new_user_registration_path, class: "header-list" do %>
-            新規登録 <i class="fas fa-user"></i>
+            <i class="fas fa-user-plus"></i> 新規登録 
           <% end %>
-          <%= link_to 'ログイン', new_user_session_path, class: "header-list" %>
+          <%= link_to new_user_session_path, class: "header-list" do %>
+            <i class="fas fa-sign-in-alt"></i> ログイン
+          <% end %>
           <div class="easy-login">
             <%= form_for(User.create, url: user_session_path, html: {class: "easy-form", id: "easy-form"}) do |f| %>
               <%= f.hidden_field :email, value: "test@example.com", id: "easy-email" %>
