@@ -1,6 +1,7 @@
 .practice {
   background-image: image-url("tennis-court.jpeg");
   background-size: 100%;
+  padding-bottom: 16px;
 }
 
 .practice-info {
@@ -16,11 +17,20 @@
   text-decoration-line: underline;
 }
 
+.practice-image {
+  padding-top: 20px;
+}
+
+.practice-main {
+  display: flex;
+}
+
 .practice-memo {
-  display: inline-block;
-  min-height: 320px;
-  width: 750px;
+  display: table;
   background-color: #F5F5F5;
+  min-height: 203px;
+  width: 600px;
+  margin-left: 100px;
   border-radius: 5px;
   &__header {
     color: #444444;
@@ -35,17 +45,22 @@
   }
 }
 
-.practice-image {
-  padding-top: 20px;
+.comment-wrapper {
+  width: 400px;
+  margin-left: 100px;
+}
+
+.comment-form {
+  width: 500px;
 }
 
 .comments {
-  display: inline-block;
-  max-height: 460px;
-  width: 650px;
   background-color: #F5F5F5;
+  min-height: 46px;
+  max-height: 250px;
+  width: 500px;
   border-radius: 5px;
-  overflow: scroll;
+  overflow-y: scroll;
   &__header {
     color: #444444;
     padding-top: 10px;
