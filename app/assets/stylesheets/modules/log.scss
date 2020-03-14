@@ -7,6 +7,9 @@
   height: calc(100vh - 56px);
   &__user {
     width: 1000px;
+    &--abatar {
+      border-radius: 50%;
+    }
   }
 }
 

@@ -9,10 +9,17 @@
 }
 
 .my-page {
-  color: black;
-  padding: 8px 10px;
-  font-weight: bold;
-  text-decoration-line: underline;
+  :hover {
+    color: #0056B3;
+  }
+  &__avatar {
+    border-radius: 50%;
+  }
+  &__name {
+    color: black;
+    font-weight: bold;
+    padding-right: 8px;
+  }
 }
 
 .header-list {
