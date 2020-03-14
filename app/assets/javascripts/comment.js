@@ -26,7 +26,7 @@ $(function () {
       .done(function(data){
         var html = buildHTML(data);
         $('.comments').append(html);
-        $('.comments').animate({scrollTop: $('.comments')[0].scrollHeight},'fast');
+        $('html, body').animate({scrollTop: $(document).height()},'fast');
         $('#new_comment')[0].reset();
         $('.send').prop('disabled', false);
       })
