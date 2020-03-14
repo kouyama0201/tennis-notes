@@ -4,7 +4,19 @@
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <%= link_to "#{current_user.name}", user_path(current_user), method: :get, class: "my-page" %>
+          <div class="my-page">
+            <% if current_user.avatar.present? %>
+              <%= link_to  user_path(current_user) do %>
+                <%= image_tag "#{current_user.avatar}", class: "my-page__avatar", size: "40x40" %>
+                <span class="my-page__name"><%= "#{current_user.name}" %></span>
+              <% end %>
+            <% else %>
+              <%= link_to  user_path(current_user) do %>
+                <%= image_tag "user-image.png", size: "40x40" %>
+                <span class="my-page__name"><%= "#{current_user.name}" %></span>
+              <% end %>
+            <% end %>
+          </div>
           <%= link_to new_log_path, class: "header-list" do %>
             <i class="fas fa-pen-alt"></i> 新規投稿
           <% end %>
