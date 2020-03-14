@@ -1,18 +1,29 @@
 <div class="wrapper">
-  <div class="wrapper__user">
-    <br><h3>ユーザー：＜<%= @user.name %>＞
-    <span id="user_<%= @user.id %>" class="d-inline-flex">
-      <%= render 'follow_form', user: @user if signed_in? %>
-    </span></h3>
-    <%= render 'users/stats' %><br>
+  <div class="wrapper__user"><br>
+    <% if @user.avatar.present? %>
+      <h3><%= image_tag "#{@user.avatar}", class:"wrapper__user--abatar", size: "40x40" %>
+        ＜<%= @user.name %>＞
+        <span id="user_<%= @user.id %>" class="d-inline-flex">
+          <%= render 'follow_form', user: @user if signed_in? %>
+        </span>
+      </h3>
+    <% else %>
+      <h3> <%= image_tag "user-image.png", size: "40x40" %>
+        ＜<%= @user.name %>＞
+        <span id="user_<%= @user.id %>" class="d-inline-flex">
+          <%= render 'follow_form', user: @user if signed_in? %>
+        </span>
+      </h3>
+    <% end %>
+    <%= render 'stats' %><br>
     <h5><%= @title %></h5>
-    <div class="follow-list">
-      <% if @users.any? %>
-        <% @users.each do |user| %>
-          <%= link_to user.name ,user_path(user) %>
+      <div class="follow-list">
+        <% if @users.any? %>
+          <% @users.each do |user| %>
+            <%= link_to user.name ,user_path(user) %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
   </div>
 </div>
 <%= render 'layouts/sidebar' %>

@@ -1,20 +1,30 @@
 <div class="wrapper">
-  <div class="wrapper__user">
-    <br><h3>ユーザー：＜<%= @user.name %>＞
-    <span id="user_<%= @user.id %>" class="d-inline-flex">
-      <%= render 'follow_form', user: @user if signed_in? %>
-    </span></h3>
+  <div class="wrapper__user"><br>
+    <% if @user.avatar.present? %>
+      <h3><%= image_tag "#{@user.avatar}", class:"wrapper__user--abatar", size: "40x40" %>
+        ＜<%= @user.name %>＞
+        <span id="user_<%= @user.id %>" class="d-inline-flex">
+          <%= render 'follow_form', user: @user if signed_in? %>
+        </span>
+      </h3>
+    <% else %>
+      <h3> <%= image_tag "user-image.png", size: "40x40" %>
+        ＜<%= @user.name %>＞
+        <span id="user_<%= @user.id %>" class="d-inline-flex">
+          <%= render 'follow_form', user: @user if signed_in? %>
+        </span>
+      </h3>
+    <% end %>
     <%= render 'stats' %><br>
     <h5>投稿一覧</h5>
-
-    <div class="main-content">
-      <div class="main-content__cards">
-        <% @log.each do |log| %>
-          <%= render partial: 'logs/log', locals: { log: log } %>
-        <% end %>
-        <%= paginate(@log) %>
+      <div class="main-content">
+        <div class="main-content__cards">
+          <% @log.each do |log| %>
+            <%= render partial: 'logs/log', locals: { log: log } %>
+          <% end %>
+          <%= paginate(@log) %>
+        </div>
       </div>
-    </div>
   </div>
 </div>
 <%= render 'layouts/sidebar' %>
