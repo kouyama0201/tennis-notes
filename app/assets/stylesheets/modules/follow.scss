@@ -9,10 +9,22 @@
 }
 
 .follow-list {
-  display: inline-grid;
+  display: inline-block;
   background-color: #FFFFFF;
-  min-width: 200px;
-  border-radius: 5px;
+  height: 177px;
+  line-height: 60px;
+  width: 255px;
+  margin: 0 15px 30px;
+  padding-top: 20px;
   font-size: 24px;
-  margin-top: 20px;
+  border: solid 1px #EEEEEE;
+  &__name {
+    color: #333333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  :hover {
+    color: #0056B3;
+  }
 }

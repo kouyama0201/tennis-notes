@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user
+  before_action :set_user, except: %i[index]
+
+  def index
+    @users = User.page(params[:page]).per(9).order("created_at ASC")
+  end
 
   def show
     if @user == current_user
@@ -15,14 +19,14 @@ class UsersController < ApplicationController
 
   def following
     @title = "フォロー"
-    @users = @user.followings
-    render 'show_follow'
+    @users = @user.followings.page(params[:page]).per(6).order("created_at ASC")
+    render 'follow'
   end
 
   def followers
     @title = "フォロワー"
-    @users = @user.followers
-    render 'show_follow'
+    @users = @user.followers.page(params[:page]).per(6).order("created_at ASC")
+    render 'follow'
   end
 
   private

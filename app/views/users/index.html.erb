@@ -1,0 +1,22 @@
+<body class="user-main">
+  <div class="user-main__content">
+    <% @users.each do |user| %>
+      <div class="follow-list">
+        <%= link_to user_path(user) do %>
+          <% if user.avatar.present? %>
+            <%= image_tag "#{user.avatar}", class:"wrapper__user--abatar", size: "100x100" %>
+          <% else %>
+            <%= image_tag "user-image.png", size: "100x100" %>
+          <% end %>
+          <p class="follow-list__name"><%= user.name %></p>
+        <% end %>
+      </div>
+    <% end %>
+    <%= paginate(@users) %>
+  </div>
+  <% if user_signed_in? %>
+    <%= render 'layouts/sidebar' %>
+  <% else %>
+    <%= image_tag "tennis-racket.jpg", class: "not-signin" %>
+  <% end %>
+</body>

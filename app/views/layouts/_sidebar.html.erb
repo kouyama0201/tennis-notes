@@ -5,6 +5,7 @@
   <%= link_to "フォロー中", following_user_path(current_user), class: "side-bar__list following" %>
   <%= link_to "フォロワー", followers_user_path(current_user), class: "side-bar__list followers" %>
   <%= link_to "いいね！した投稿", like_user_path(current_user), class: "side-bar__list like" %>
+  <%= link_to "ユーザー一覧", users_path, class: "side-bar__list users" %>
   <%= link_to "アカウント編集", edit_user_registration_path, class: "side-bar__list user-edit" %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "side-bar__list" %>
 </div>
