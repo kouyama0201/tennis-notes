@@ -9,18 +9,28 @@
   </div>
 <% end %>
 
-<div class="wrapper">
-  <div class="main-content">
-    <div class="main-content__cards">
-      <% @log.each do |log| %>
-        <%= render partial: 'log', locals: { log: log } %>
-      <% end %>
-      <%= paginate(@log) %>
-    </div>
-    <% if user_signed_in? %>
+<% if user_signed_in? %>
+  <div class="wrapper">
+    <div class="main__content">
+      <div class="main__content--cards">
+        <% @log.each do |log| %>
+          <%= render partial: 'card', locals: { log: log } %>
+        <% end %>
+        <%= paginate(@log) %>
+      </div>
       <%= render 'layouts/sidebar' %>
-    <% else %>
-      <%= image_tag "tennis-racket.jpg", width: 440 %>
-    <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="main">
+    <div class="main__content">
+      <div class="main__content--cards">
+        <% @log.each do |log| %>
+          <%= render partial: 'card', locals: { log: log } %>
+        <% end %>
+        <%= paginate(@log) %>
+      </div>
+      <%= image_tag "tennis-racket.jpg", width: 440 %>
+    </div>
+  </div>
+<% end %>
