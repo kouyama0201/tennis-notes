@@ -1,5 +1,5 @@
-<div class="wrapper">
-  <div class="wrapper__user">
+<body class="user-main">
+  <div class="user-main__content">
     <% if @user.avatar.present? %>
       <h3><%= image_tag "#{@user.avatar}", class:"wrapper__user--abatar", size: "40x40" %>
     <% else %>
@@ -11,15 +11,24 @@
         </span>
       </h3>
     <%= render 'stats' %><br>
-    <h5>投稿一覧</h5>
-      <% @log.each do |log| %>
-        <%= render partial: 'logs/card', locals: { log: log } %>
+    <h5><%= @title %></h5>
+      <% @users.each do |user| %>
+        <div class="follow-list">
+          <%= link_to user_path(user) do %>
+            <% if user.avatar.present? %>
+              <%= image_tag "#{user.avatar}", class:"wrapper__user--abatar", size: "100x100" %>
+            <% else %>
+              <%= image_tag "user-image.png", size: "100x100" %>
+            <% end %>
+            <p class="follow-list__name"><%= user.name %></p>
+          <% end %>
+        </div>
       <% end %>
-      <%= paginate(@log) %>
+      <%= paginate(@users) %>
   </div>
   <% if user_signed_in? %>
     <%= render 'layouts/sidebar' %>
   <% else %>
     <%= image_tag "tennis-racket.jpg", class: "not-signin" %>
   <% end %>
-</div>
+</body>

@@ -1,20 +1,21 @@
 <div class="wrapper">
   <div class="wrapper__user">
-    <br><h3>ユーザー：＜<%= @user.name %>＞
-    <span id="user_<%= @user.id %>" class="d-inline-flex">
-      <%= render 'follow_form', user: @user if signed_in? %>
-    </span></h3>
+    <% if @user.avatar.present? %>
+      <h3><%= image_tag "#{@user.avatar}", class:"wrapper__user--abatar", size: "40x40" %>
+    <% else %>
+      <h3><%= image_tag "user-image.png", size: "40x40" %>
+    <% end %>
+      ＜<%= @user.name %>＞
+        <span id="user_<%= @user.id %>" class="d-inline-flex">
+          <%= render 'follow_form', user: @user if signed_in? %>
+        </span>
+      </h3>
     <%= render 'stats' %><br>
     <h5>いいね！した投稿</h5>
-
-    <div class="main-content">
-      <div class="main-content__cards">
-        <% @like.each do |log| %>
-          <%= render partial: 'logs/log', locals: { log: log } %>
-        <% end %>
-        <%= paginate(@like) %>
-      </div>
-    </div>
+      <% @like.each do |log| %>
+        <%= render partial: 'logs/card', locals: { log: log } %>
+      <% end %>
+      <%= paginate(@like) %>
   </div>
+  <%= render 'layouts/sidebar' %>
 </div>
-<%= render 'layouts/sidebar' %>
