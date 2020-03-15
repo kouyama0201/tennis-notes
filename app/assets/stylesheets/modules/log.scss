@@ -1,16 +1,17 @@
-.container {
-  max-width: 400px;
-}
-
 .wrapper {
   background-color: #F5F5F5;
   height: calc(100vh - 56px);
   &__user {
     width: 1000px;
+    padding-top: 20px;
     &--abatar {
       border-radius: 50%;
     }
   }
+}
+
+.container {
+  max-width: 400px;
 }
 
 .main-info {
@@ -26,14 +27,25 @@
   }
 }
 
-.main-content {
-  background-color: #F5F5F5;
-  display: flex;
-  &__cards {
-    color: #444444;
-    padding-top: 20px;
-    width: 1000px;
+.main {
+  height: 100%;
+  &__content {
+    background-color: #F5F5F5;
+    display: flex;
+    &--cards {
+      color: #444444;
+      padding-top: 20px;
+      width: 1000px;
+    }
   }
+}
+
+.not-signin {
+  position: absolute;
+  top: 56px;
+  right: 0;
+  height: calc(100vh - 56px);
+  width: 440px;
 }
 
 .pagination {
