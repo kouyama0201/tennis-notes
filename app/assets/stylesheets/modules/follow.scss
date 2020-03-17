@@ -1,10 +1,10 @@
 .posts {
-  color: #333333;
+  color: #444444;
   text-decoration-line: underline;
 }
 
 .follow {
-  color: #333333;
+  color: #444444;
   text-decoration-line: underline;
 }
 
@@ -18,8 +18,10 @@
   padding-top: 20px;
   font-size: 24px;
   border: solid 1px #EEEEEE;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   &__name {
-    color: #333333;
+    color: #444444;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
