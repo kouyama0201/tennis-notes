@@ -1,30 +1,38 @@
 <div class="card">
-  <h5 class="card-writer">投稿者：<%= log.user.name %></h5>
-  <p class="practice-day">練習日：<%= log.practice_day %></p>
-    <div class="card-body">
-      <% if log.status == 0 %>
-        <%= link_to log_path(log.id), class: "book-icon" do %>
-          <i class="fas fa-book-open"></i>
-        <% end %>
-      <% elsif log.status == 1 %>
-        <%= link_to log_path(log.id), class: "book-icon" do %>
-          <i class="fas fa-book"></i>
-        <% end %>
+  <h5 class="card-writer">
+    <%= link_to user_path(log.user) do %>
+      <% if log.user.avatar.present? %>
+        <%= image_tag "#{log.user.avatar}", class:"wrapper__user--abatar", size:"40x40" %>
+      <% else %>
+        <%= image_tag "user-image.png", size: "40x40" %>
       <% end %>
-      <p class="card-text">投稿日時：<%= log.created_at %></p>
-      <span class="comment-count">
-        <i class="far fa-comment-dots"></i><%= log.comments.count.to_s %>件
-      </span>
-      <div class="likes" id="likes_buttons_<%= log.id %>">
-        <%= render partial: 'likes/like', locals: { log: log, likes: @likes } %>
-      </div>
-      <% if user_signed_in? && log.user_id == current_user.id %>
-        <%= link_to edit_log_path(log), class: "edit-icon" do %>
-          <i class="fas fa-edit"></i>
-        <% end %>
-        <%= link_to log_path(log), method: :delete, class: "destroy-icon", data: { confirm: '投稿を削除します。よろしいですか？' } do %>
-          <i class="fas fa-times-circle"></i>
-        <% end %>
+      <span class="card-writer__name"><%= log.user.name %></span>
+    <%end%>
+  </h5>
+  <div class="card-body">
+    <% if log.status == 0 %>
+      <%= link_to log_path(log.id), class: "book-icon" do %>
+        <i class="fas fa-book-open"></i>
       <% end %>
+    <% elsif log.status == 1 %>
+      <%= link_to log_path(log.id), class: "book-icon" do %>
+        <i class="fas fa-book"></i>
+      <% end %>
+    <% end %>
+        <p class="practice-day">練習日：<%= log.practice_day %></p>
+    <span class="comment-count">
+      <i class="far fa-comment-dots"></i><%= log.comments.count.to_s %>件
+    </span>
+    <div class="likes" id="likes_buttons_<%= log.id %>">
+      <%= render partial: 'likes/like', locals: { log: log, likes: @likes } %>
     </div>
+    <% if user_signed_in? && log.user_id == current_user.id %>
+      <%= link_to edit_log_path(log), class: "edit-icon" do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+      <%= link_to log_path(log), method: :delete, class: "destroy-icon", data: { confirm: '投稿を削除します。よろしいですか？' } do %>
+        <i class="fas fa-times-circle"></i>
+      <% end %>
+    <% end %>
+  </div>
 </div>
