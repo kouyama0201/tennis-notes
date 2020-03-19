@@ -1,6 +1,7 @@
 .wrapper {
   background-color: #F5F5F5;
   height: calc(100vh - 56px);
+  text-align: center;
   &__user {
     width: 1000px;
     padding-top: 20px;
@@ -17,6 +18,7 @@
 .main-info {
   position: relative;
   height: 395px;
+  text-align: center;
   &__text {
     position: absolute;
     color: #F5F5F5;
@@ -36,6 +38,7 @@
       color: #444444;
       padding-top: 20px;
       width: 1000px;
+      text-align: center;
     }
   }
 }

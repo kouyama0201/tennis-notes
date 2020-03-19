@@ -9,6 +9,7 @@
   height: 110px;
   width: 100vw;
   color: #F5F5F5;
+  text-align: center;
   margin-top: 20px;
 }
 
@@ -18,6 +19,7 @@
 }
 
 .practice-image {
+  text-align: center;
   padding-top: 20px;
 }
 
@@ -31,9 +33,11 @@
   min-height: 46px;
   width: 600px;
   margin-left: 100px;
+  padding: 0 8px 5px;
   border-radius: 5px;
   &__header {
     color: #444444;
+    text-align: center;
     padding-top: 10px;
   }
   &__body {
