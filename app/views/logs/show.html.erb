@@ -16,7 +16,7 @@
   <div class="practice-main">
     <div class="practice-memo">
       <h4 class="practice-memo__header">＜テニスノート＞</h4>
-      <p class="practice-memo__body"><%= @log.text %></p>
+      <%= simple_format(@log.text, class: "practice-memo__body") %>
     </div><br>
 
     <div class="comment-wrapper">
