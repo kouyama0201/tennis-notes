@@ -1,4 +1,4 @@
-<div class="wrapper">
+<body class="wrapper">
   <div class="wrapper__user">
     <% if @user.avatar.present? %>
       <h3><%= image_tag "#{@user.avatar}", class:"wrapper__user--abatar", size: "40x40" %>
@@ -18,4 +18,4 @@
       <%= paginate(@like) %>
   </div>
   <%= render 'layouts/sidebar' %>
-</div>
+</body>

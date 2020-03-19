@@ -1,4 +1,4 @@
-<div class="wrapper">
+<body class="wrapper">
   <%= form_with model: @log, id: "log-form", local: true do |f| %>
     <div class="form-left">
       <div class="form-left__day">
@@ -45,7 +45,7 @@
 
     <div class="form-right">
       <%= f.label "テニスノート（練習メモ）" %><br>
-      <%= f.text_area :text, rows: 19, cols: 65 %><br>
+      <%= f.text_area :text, rows: 19, cols: 63 %><br>
       <%= f.file_field :image %>
       <%= f.select :status, [["公開する", "0"],["公開しない", "1"]] %>
       <% if current_page?(new_log_path) %>
@@ -56,5 +56,5 @@
     </div>
 
   <% end %>
-</div>
+</body>
 <%= render 'layouts/sidebar' %>
