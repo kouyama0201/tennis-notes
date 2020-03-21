@@ -2,7 +2,7 @@
   <h5 class="card-writer">
     <%= link_to user_path(log.user) do %>
       <% if log.user.avatar.present? %>
-        <%= image_tag "#{log.user.avatar}", class:"wrapper__user--abatar", size:"40x40" %>
+        <%= image_tag "#{log.user.avatar}", class: "wrapper__user--abatar", size: "40x40" %>
       <% else %>
         <%= image_tag "user-image.png", size: "40x40" %>
       <% end %>
