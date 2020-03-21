@@ -1,7 +1,7 @@
 <body class="wrapper">
   <div class="wrapper__user">
     <% if @user.avatar.present? %>
-      <h3><%= image_tag "#{@user.avatar}", class: "wrapper__user--abatar", size: "40x40" %>
+      <h3><%= image_tag "#{@user.avatar}", class: "wrapper__user--avatar", size: "40x40" %>
     <% else %>
       <h3><%= image_tag "user-image.png", size: "40x40" %>
     <% end %>
