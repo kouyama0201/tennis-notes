@@ -28,6 +28,9 @@
 .card-body {
   padding: 15px 0 5px;
   border-top: solid 1px #EEEEEE;
+  :hover {
+    text-decoration: none;
+  }
 }
 
 .book-icon {
@@ -53,10 +56,16 @@
 .likes {
   display: inline-block;
   margin: 0;
+  :hover {
+    color: #0056B3;
+  }
 }
 
 .vertical_like {
   color: #444444;
+  :hover {
+    transform: scale(1.1, 1.1);
+  }
 }
 
 .edit-icon {
