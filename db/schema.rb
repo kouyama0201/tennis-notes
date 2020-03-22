@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_064233) do
+ActiveRecord::Schema.define(version: 2020_03_22_045737) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 2020_03_14_064233) do
     t.datetime "updated_at", null: false
     t.index ["log_id"], name: "index_comments_on_log_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.bigint "log_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["log_id"], name: "index_images_on_log_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -38,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_03_14_064233) do
     t.integer "stroke", default: 0
     t.integer "game", default: 0
     t.text "text"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -74,6 +81,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_064233) do
 
   add_foreign_key "comments", "logs"
   add_foreign_key "comments", "users"
+  add_foreign_key "images", "logs"
   add_foreign_key "likes", "logs"
   add_foreign_key "likes", "users"
   add_foreign_key "logs", "users"
