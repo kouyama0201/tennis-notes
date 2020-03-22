@@ -1,60 +1,83 @@
-<body class="wrapper">
-  <%= form_with model: @log, id: "log-form", local: true do |f| %>
-    <div class="form-left">
-      <div class="form-left__day">
-        <%= f.label "練習日" %>
-          <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
-            <%= f.text_field :practice_day, class: "datetimepicker-input form-control text-center", autocomplete: "off" %>
-              <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
-                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+<div class="form-wrapper">
+  <div class="form-wrapper__log-form">
+    <%= form_with(model: @log, id: "log-form", local: true) do |f| %>
+      <div class="form-upper">
+        <div class="form-upper__left">
+          <div class="form-upper__left--day">
+            <%= f.label "練習日" %>
+              <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                <%= f.text_field :practice_day, class: "datetimepicker-input form-control text-center", autocomplete: "off" %>
+                  <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                  </div>
+              </div>
+              <script type="text/javascript">
+                $(function () {
+                  $('#datetimepicker4').datetimepicker({
+                      format: 'L'
+                  });
+                });
+              </script>
+            <div id="log_practice_day_error"></div>
+          </div>
+          <div class="form-upper__left__times">
+            <%= f.label "練習時間（分）" %>
+            <div class="form-upper__left__times__total">合計
+              <span class="form-upper__left__times__total--minutes">0</span>
+              <span class="form-upper__left__times__total--unit">分</span>
+            </div>
+              <div class="form-upper__left__times__wrap">
+                <%= f.label "サーブ", class: "form-upper__left__times__wrap--list" %>
+                <%= f.text_field :serve, class: "form-upper__left__times__wrap--list--field", autocomplete: "off" %>
+              </div>
+              <div class="form-upper__left__times__wrap">
+                <%= f.label "スマッシュ", class: "form-upper__left__times__wrap--list" %>
+                <%= f.text_field :smash, class: "form-upper__left__times__wrap--list--field", autocomplete: "off" %>
+              </div>
+              <div class="form-upper__left__times__wrap">
+                <%= f.label "ボレー", class: "form-upper__left__times__wrap--list" %>
+                <%= f.text_field :volley, class: "form-upper__left__times__wrap--list--field", autocomplete: "off" %>
+              </div>
+              <div class="form-upper__left__times__wrap">
+                <%= f.label "ストローク", class: "form-upper__left__times__wrap--list" %>
+                <%= f.text_field :stroke, class: "form-upper__left__times__wrap--list--field", autocomplete: "off" %>
+              </div>
+              <div class="form-upper__left__times__wrap">
+                <%= f.label "ゲーム形式", class: "form-upper__left__times__wrap--list" %>
+                <%= f.text_field :game, class: "form-upper__left__times__wrap--list--field", autocomplete: "off" %>
               </div>
           </div>
-          <script type="text/javascript">
-            $(function () {
-              $('#datetimepicker4').datetimepicker({
-                  format: 'L'
-              });
-            });
-          </script>
-        <div id="log_practice_day_error"></div>
+        </div>
+        <div class="form-upper__right">
+          <%= f.label "テニスノート（練習メモ）" %><br>
+          <%= f.text_area :text, rows: 23, cols: 63 %><br>
+        </div>
       </div>
-      <div class="form-left__times">
-        <%= f.label "練習時間（分）" %>
-          <div class="form-left__times__wrap">
-            <%= f.label "サーブ", class: "form-left__times__wrap__list" %>
-            <%= f.text_field :serve, class: "form-left__times__wrap__list--field", autocomplete: "off" %>
+
+      <div class="form-lower">
+        <%= f.label "画像（３枚まで）" %>
+          <div class="form-lower__image-content">
+            <label class="form-lower__image-field" id="image-field--0" for="log_images_attributes_0_image">
+              <%= image_tag "camera.png", size: "275x275" %>
+            </label>
           </div>
-          <div class="form-left__times__wrap">
-            <%= f.label "スマッシュ", class: "form-left__times__wrap__list" %>
-            <%= f.text_field :smash, class: "form-left__times__wrap__list--field", autocomplete: "off" %>
-          </div>
-          <div class="form-left__times__wrap">
-            <%= f.label "ボレー", class: "form-left__times__wrap__list" %>
-            <%= f.text_field :volley, class: "form-left__times__wrap__list--field", autocomplete: "off" %>
-          </div>
-          <div class="form-left__times__wrap">
-            <%= f.label "ストローク", class: "form-left__times__wrap__list" %>
-            <%= f.text_field :stroke, class: "form-left__times__wrap__list--field", autocomplete: "off" %>
-          </div>
-          <div class="form-left__times__wrap">
-            <%= f.label "ゲーム形式", class: "form-left__times__wrap__list" %>
-            <%= f.text_field :game, class: "form-left__times__wrap__list--field", autocomplete: "off" %>
-          </div>
+          <%= f.fields_for :images do |i| %>
+            <%= i.file_field :image, class: "form-lower__image-field--input" %>
+            <input type="file" class="form-lower__image-field--input" name="log[images_attributes][1][image]" id="log_images_attributes_1_image">
+            <input type="file" class="form-lower__image-field--input" name="log[images_attributes][2][image]" id="log_images_attributes_2_image">
+          <% end %>
+        <div class="form-lower__status">
+          <%= f.label "練習記録の公開・非公開を選択" %>
+            <%= f.select :status, [["公開する", "0"],["公開しない", "1"]], {}, class: "form-lower__status--select" %>
+        </div>
+          <% if current_page?(new_log_path) %>
+            <%= f.submit "記録する", class: "submit-btn btn btn-primary" %>
+          <% else %>
+            <%= f.submit "更新する", class: "submit-btn btn btn-primary" %>
+          <% end %>
+
       </div>
-    </div>
-
-    <div class="form-right">
-      <%= f.label "テニスノート（練習メモ）" %><br>
-      <%= f.text_area :text, rows: 19, cols: 63 %><br>
-      <%= f.file_field :image %>
-      <%= f.select :status, [["公開する", "0"],["公開しない", "1"]] %>
-      <% if current_page?(new_log_path) %>
-        <%= f.submit "記録する", class: "submit-button btn btn btn-primary" %>
-      <% else %>
-        <%= f.submit "更新する", class: "submit-button btn btn btn-primary" %>
-      <% end %>
-    </div>
-
-  <% end %>
-</body>
+    <% end %>
+  </div>
+</div>
 <%= render 'layouts/sidebar' %>
