@@ -8,6 +8,7 @@ class LogsController < ApplicationController
 
   def new
     @log = Log.new
+    @log.images.build
   end
 
   def create
@@ -16,6 +17,7 @@ class LogsController < ApplicationController
       @log.save
       redirect_to root_path, notice: '投稿しました。'
     else
+      @log.images.build
       render new_log_path(@log)
     end
   end
@@ -49,7 +51,7 @@ class LogsController < ApplicationController
   private
 
   def log_params
-    params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :image, :practice_day, :status).merge(user_id: current_user.id)
+    params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :practice_day, :status, images_attributes: [:id, :image]).merge(user_id: current_user.id)
   end
 
   def set_log
