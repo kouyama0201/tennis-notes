@@ -23,7 +23,7 @@
     width: 300px;
     padding-top: 10px;
     padding-left: 30px;
-    &--day {
+    &__day {
       height: 70px;
       padding: 0 40px;
     }
@@ -41,7 +41,7 @@
       }
       &__wrap{
         height: 89px;
-        &--list {
+        &__list {
           display: block;
           &--field {
             height: 38px;
