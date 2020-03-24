@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 2020_03_14_064233) do
     t.integer "stroke", default: 0
     t.integer "game", default: 0
     t.text "text"
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.date "practice_day", null: false
     t.integer "likes_count", default: 0
     t.integer "status"
+    t.string "image"
     t.index ["user_id"], name: "index_logs_on_user_id"
   end
 

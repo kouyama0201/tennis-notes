@@ -1,49 +1,95 @@
-#log-form {
-  display: flex;
-}
-
 .form-parts {
   height: 80px;
 }
 
-.form-left {
+.form-wrapper {
   background-color: #F5F5F5;
-  color: #444444;
-  height: 550px;
-  width: 300px;
-  padding-top: 10px;
-  margin: 40px 0 0 80px;
-  &__day {
-    height: 70px;
-    padding: 0 40px;
+  padding: 20px 0;
+  &__log-form {
+    background-color: #FFFFFF;
+    height: 1020px;
+    width: 900px;
+    margin-left: 80px;
+    border: solid 1px #EEEEEE;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   }
-  &__times {
-    display: inline-table;
-    padding-top: 22px;
-    &__wrap{
-      height: 84px;
-      &__list {
-        display: block;
-        &--field {
-          width: 110px;
-          text-align: right;
-          border: solid 1px #D3D3D3;
-          border-radius: 3px;
-          padding: 0 8px;
+}
+
+.form-upper {
+  display: flex;
+  text-align: center;
+  &__left {
+    color: #444444;
+    width: 300px;
+    padding-top: 10px;
+    padding-left: 30px;
+    &--day {
+      height: 70px;
+      padding: 0 40px;
+    }
+    &__times {
+      display: inline-table;
+      padding-top: 22px;
+      &__total {
+        padding-bottom: 5px;
+        text-decoration: underline double;
+        &--minutes{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      &__wrap{
+        height: 89px;
+        &--list {
+          display: block;
+          &--field {
+            height: 38px;
+            width: 151px;
+            text-align: right;
+            border: solid 1px #D3D3D3;
+            border-radius: 3px;
+            padding: 0 8px;
+          }
         }
       }
     }
   }
+  &__image-field {
+    margin-top: 20px;
+    cursor: pointer;
+    :hover {
+      opacity: 0.7;
+    }
+    &--input {
+      display: none;
+    }
+    &--checkbox {
+      display: none;
+    }
+  }
+  &__right {
+    color: #444444;
+    width: 605px;
+    padding-top: 10px;
+    &--textarea {
+      height: 861px;
+      width: 526px;
+    }
+  }
 }
 
-.form-right {
-  background-color: #F5F5F5;
-  color: #444444;
-  width: 605px;
-  padding-top: 10px;
-  margin: 40px 0 0 10px;
-}
-
-.submit-button {
+.form-lower {
   margin-left: 20px;
+  &__status {
+    margin: 10px 0;
+    &--select {
+      margin-left: 10px;
+    }
+  }
+}
+
+.submit-btn {
+  width: 858px;
+  margin-right: 20px;
 }

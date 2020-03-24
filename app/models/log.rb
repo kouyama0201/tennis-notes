@@ -3,7 +3,7 @@ class Log < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   mount_uploader :image, ImageUploader
-
+  
   validates :practice_day, presence: true
   validates :serve, :smash, :volley, :stroke, :game,
             presence: true,
