@@ -1,6 +1,7 @@
 class LogsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_log, only: %i[edit show]
+  before_action :set_practice, only: %i[edit show]
 
   def index
     @log = Log.includes(:user).page(params[:page]).per(9).order("created_at DESC").where.not(status: "1")
@@ -8,7 +9,6 @@ class LogsController < ApplicationController
 
   def new
     @log = Log.new
-    @log.images.build
   end
 
   def create
@@ -17,7 +17,6 @@ class LogsController < ApplicationController
       @log.save
       redirect_to root_path, notice: '投稿しました。'
     else
-      @log.images.build
       render new_log_path(@log)
     end
   end
@@ -43,7 +42,6 @@ class LogsController < ApplicationController
   end
 
   def show
-    @graph = [@log.serve, @log.smash, @log.volley, @log.stroke, @log.game]
     @comment = Comment.new
     @comments = @log.comments.includes(:user)
   end
@@ -51,10 +49,14 @@ class LogsController < ApplicationController
   private
 
   def log_params
-    params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :practice_day, :status, images_attributes: [:id, :image]).merge(user_id: current_user.id)
+    params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :practice_day, :status, :image).merge(user_id: current_user.id)
   end
 
   def set_log
     @log = Log.find(params[:id])
+  end
+
+  def set_practice
+    @practice = [@log.serve, @log.smash, @log.volley, @log.stroke, @log.game]
   end
 end
