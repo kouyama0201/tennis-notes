@@ -7,7 +7,7 @@
   padding: 20px 0;
   &__log-form {
     background-color: #FFFFFF;
-    height: 1050px;
+    height: 1020px;
     width: 900px;
     margin-left: 80px;
     border: solid 1px #EEEEEE;
@@ -20,7 +20,6 @@
   text-align: center;
   &__left {
     color: #444444;
-    height: 620px;
     width: 300px;
     padding-top: 10px;
     padding-left: 30px;
@@ -32,6 +31,8 @@
       display: inline-table;
       padding-top: 22px;
       &__total {
+        padding-bottom: 5px;
+        text-decoration: underline double;
         &--minutes{
           overflow: hidden;
           text-overflow: ellipsis;
@@ -39,12 +40,12 @@
         }
       }
       &__wrap{
-        height: 90px;
+        height: 89px;
         &--list {
           display: block;
           &--field {
-            height: 36px;
-            width: 150px;
+            height: 38px;
+            width: 151px;
             text-align: right;
             border: solid 1px #D3D3D3;
             border-radius: 3px;
@@ -54,20 +55,8 @@
       }
     }
   }
-  &__right {
-    color: #444444;
-    width: 605px;
-    padding-top: 10px;
-  }
-}
-
-.form-lower {
-  display: grid;
-  margin-left: 20px;
-  &__image-content {
-    display: flex;
-  }
   &__image-field {
+    margin-top: 20px;
     cursor: pointer;
     :hover {
       opacity: 0.7;
@@ -75,30 +64,29 @@
     &--input {
       display: none;
     }
+    &--checkbox {
+      display: none;
+    }
   }
+  &__right {
+    color: #444444;
+    width: 605px;
+    padding-top: 10px;
+    &--textarea {
+      height: 861px;
+      width: 526px;
+    }
+  }
+}
+
+.form-lower {
+  margin-left: 20px;
   &__status {
     margin: 10px 0;
     &--select {
       margin-left: 10px;
     }
   }
-}
-
-.log-image {
-  position: relative;
-  margin-right: 16px;
-  &__delete-btn {
-    position: absolute;
-    top: -16px;
-    right: -12px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-}
-
-#image-field--3 {
-  visibility: hidden;
-  margin-bottom: 8px;
 }
 
 .submit-btn {
