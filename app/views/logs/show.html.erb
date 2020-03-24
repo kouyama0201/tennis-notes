@@ -2,14 +2,14 @@
   <div class="practice-info">
     <h4><%= link_to "投稿者：＜#{@log.user.name}＞", user_path(@log.user_id), class: "practice-person" %></h4>
     <h5>練習日：<%= @log.practice_day %></h5>
-    <h5>合計練習時間：<%= @graph.sum %>分</h5>
+    <h5>合計練習時間：<%= @practice.sum %>分</h5>
   </div>
 
-  <%= render partial: 'graph', locals: { graph: @graph } %><br>
+  <%= render partial: 'graph', locals: { graph: @practice } %><br>
 
   <% if @log.image.present? %>
     <div class="practice-image">
-      <%= image_tag @log.image.to_s, size: "400x500" %>
+      <%= image_tag @log.image.to_s, size: "600x350" %>
     </div><br>
   <% end %>
 
