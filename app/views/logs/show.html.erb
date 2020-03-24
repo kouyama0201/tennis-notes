@@ -5,29 +5,29 @@
     <h5>合計練習時間：<%= @practice.sum.to_s(:delimited, delimiter: ',') %>分</h5>
   </div>
 
-  <%= render partial: 'graph', locals: { graph: @practice } %><br>
+  <%= render partial: 'graph', locals: { graph: @practice } %>
 
   <% if @log.image.present? %>
     <div class="practice-image">
       <%= image_tag @log.image.to_s, size: "600x350" %>
-    </div><br>
+    </div>
   <% end %>
 
   <div class="practice-main">
     <div class="practice-memo">
       <h4 class="practice-memo__header">＜テニスノート＞</h4>
       <%= simple_format(@log.text, class: "practice-memo__body") %>
-    </div><br>
+    </div>
 
     <div class="comment-wrapper">
-      <div class="comment-form">
-        <% if current_user %>
+      <% if current_user %>
+        <div class="comment-form">
           <%= form_with model:[@log, @comment], id: "new_comment", local: true do |f| %>
-            <%= f.text_area :text, class: "comment-box form-control", placeholder: "コメントを入力…" %><br>
-            <%= f.submit "送信", class: "send btn btn-primary btn-lg btn-block" %><br>
+            <%= f.text_area :text, class: "comment-form__box form-control", placeholder: "コメントを入力…" %>
+            <%= f.submit "送信", class: "send btn btn-primary btn-lg btn-block" %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
       <div class="comments">
         <div class="comments__header">
           <h4>＜コメント一覧＞</h4>
