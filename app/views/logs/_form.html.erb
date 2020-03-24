@@ -63,6 +63,10 @@
               <% end %>
             </label>
             <%= f.file_field :image, class: "form-upper__image-field--input" %>
+            <% if @log.image? %>
+              <%= f.check_box :remove_image, class: "form-upper__image-field--checkbox" %>
+              <span class="form-upper__image-field--destroy">画像を削除する</span>
+            <% end %>
           </div>
         </div>
 
@@ -79,9 +83,9 @@
         </div>
 
         <% if current_page?(new_log_path) %>
-          <%= f.submit "記録する", class: "submit-btn btn btn-primary" %>
+          <%= f.submit "記録する", class: "submit-btn btn-lg btn-primary" %>
         <% else %>
-          <%= f.submit "更新する", class: "submit-btn btn btn-primary" %>
+          <%= f.submit "更新する", class: "submit-btn btn-lg btn-primary" %>
         <% end %>
       </div>
     <% end %>
