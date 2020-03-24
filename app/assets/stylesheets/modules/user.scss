@@ -17,6 +17,10 @@
   }
 }
 
+.profile-wrapper {
+  height: 130px;
+}
+
 .profile {
   display: flex;
   &__image {
@@ -26,6 +30,18 @@
     }
     &--field {
       display: none;
+    }
+    &__destroy {
+      margin-top: 20px;
+      text-align: left;
+      &--checkbox {
+        margin-right: 2px;
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+      &--text {
+        font-size: 13px;
+      }
     }
   }
   &__name {

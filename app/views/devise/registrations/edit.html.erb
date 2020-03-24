@@ -7,17 +7,25 @@
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <%= f.label "プロフィール" %>
-          <div class="profile form-parts form-group">
-            <label class="profile__image" for="avatar-field">
-              <% if current_user.avatar? %>
-                <%= image_tag "#{current_user.avatar}", class: "wrapper__user--avatar", id: "avatar-prev", size: "100x100" %>
-              <% else %>
-                <%= image_tag "camera.png", class: "wrapper__user--avatar", id: "avatar-prev", size: "100x100" %>
-              <% end %>
-            </label>
-            <%= f.file_field :avatar, class: "profile__image--field", id: "avatar-field" %>
-            <%= f.text_field :name, class: "profile__name form-control", placeholder: "Enter your name" %>
-          </div><br>
+          <div class="profile-wrapper">
+            <div class="profile form-parts form-group">
+              <label class="profile__image" for="avatar-field">
+                <% if current_user.avatar? %>
+                  <%= image_tag "#{current_user.avatar}", class: "wrapper__user--avatar", id: "avatar-prev", size: "100x100" %>
+                <% else %>
+                  <%= image_tag "camera.png", class: "wrapper__user--avatar", id: "avatar-prev", size: "100x100" %>
+                <% end %>
+              </label>
+              <%= f.file_field :avatar, class: "profile__image--field", id: "avatar-field" %>
+              <%= f.text_field :name, class: "profile__name form-control", placeholder: "Enter your name" %>
+            </div>
+            <% if current_user.avatar? %>
+              <div class="profile__image__destroy">
+                <%= f.check_box :remove_avatar, class: "profile__image__destroy--checkbox" %>
+                <span class="profile__image__destroy--text">画像を削除する</span>
+              </div>
+            <% end %>
+          </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
