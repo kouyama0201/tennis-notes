@@ -34,7 +34,7 @@ class LogsController < ApplicationController
 
   def update
     log = Log.find(params[:id])
-    if log.user_id == current_user.id && log.update(log_params) 
+    if log.user_id == current_user.id && log.update(log_update_params) 
       redirect_to root_path, notice: '投稿を更新しました。'
     else
       redirect_to root_path, alert: '投稿を更新できませんでした。'
@@ -50,6 +50,10 @@ class LogsController < ApplicationController
 
   def log_params
     params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :practice_day, :status, :image).merge(user_id: current_user.id)
+  end
+
+  def log_update_params
+    params.require(:log).permit(:serve, :smash, :volley, :stroke, :game, :text, :practice_day, :status, :image, :remove_image).merge(user_id: current_user.id)
   end
 
   def set_log
