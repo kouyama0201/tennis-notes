@@ -12,8 +12,8 @@ https://www.tennis-notes.com/
 * ユーザー登録・ログイン機能(devise)
 * 練習記録投稿機能(CRUD)
 * 画像投稿機能(carriewave)
-* 練習記録詳細画面でのグラフ表示機能(Chartkick)
-* 練習記録へのコメント投稿・削除機能(Ajax)
+* グラフ表示機能(Chartkick)
+* コメント投稿・削除機能(Ajax)
 * いいね機能(Ajax)
 * ユーザーフォロー機能(Ajax)
 * ページネーション機能(kaminari)
@@ -32,4 +32,4 @@ https://www.tennis-notes.com/
 * AWS(VPC, EC2, RDS, ALB, Route53, ACM, S3)
 
 # AWSアーキテクチャ図
-![tennis-notes AWS](https://user-images.githubusercontent.com/54708394/75516447-db7c0900-5a3f-11ea-8644-82725b76076c.jpeg)
+![tennis-notes AWS](https://user-images.githubusercontent.com/54708394/80792970-bd15c380-8bd0-11ea-9dbd-ebf376d7f967.jpeg)
