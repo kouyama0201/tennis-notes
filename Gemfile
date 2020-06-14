@@ -45,6 +45,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem "rspec_junit_formatter"
 end
 
 group :development do
