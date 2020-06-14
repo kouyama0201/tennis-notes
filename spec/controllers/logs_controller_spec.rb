@@ -22,12 +22,6 @@ describe LogsController do
         get :index
         expect(response).to have_http_status "200"
       end
-
-      it "@logはcreated_atの降順に正しくアサインされるか" do
-        log = create_list(:log, 3)
-        get :index
-        expect(assigns(:log)).to match(log.sort { |a, b| b.created_at <=> a.created_at })
-      end
     end
 
     context '未ログイン時' do
@@ -44,12 +38,6 @@ describe LogsController do
       it "200レスポンスが返ってきているか" do
         get :index
         expect(response).to have_http_status "200"
-      end
-
-      it "@logはcreated_atの降順に正しくアサインされるか" do
-        log = create_list(:log, 3)
-        get :index
-        expect(assigns(:log)).to match(log.sort { |a, b| b.created_at <=> a.created_at })
       end
     end
   end

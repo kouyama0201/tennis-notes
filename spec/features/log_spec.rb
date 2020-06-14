@@ -17,7 +17,7 @@ feature 'log', type: :feature do
 
     # 練習記録の投稿
     expect {
-      click_link('投稿')
+      click_link('投稿する')
       expect(current_path).to eq new_log_path
       fill_in 'log[practice_day]', with: '2020/02/01'
       fill_in 'log[serve]', with: '0'
