@@ -11,7 +11,7 @@ https://www.tennis-notes.com/
 # 機能一覧
 * ユーザー登録・ログイン機能(devise)
 * 練習記録投稿機能(CRUD)
-* 画像投稿機能(carriewave)
+* 画像投稿機能(carrierwave)
 * グラフ表示機能(Chartkick)
 * コメント投稿・削除機能(Ajax)
 * いいね機能(Ajax)
