@@ -29,8 +29,9 @@ https://www.tennis-notes.com/
 * Unicorn
 * Nginx
 * Capistrano
-* AWS(VPC, EC2, RDS, ALB, Route53, ACM, S3)
+* AWS(VPC, EC2, RDS for MySQL, ALB, Route53, ACM, S3)
 * Docker
+* CircleCI(CI/CD)
 
 # AWSアーキテクチャ図
-![tennis-notes AWS](https://user-images.githubusercontent.com/54708394/80792970-bd15c380-8bd0-11ea-9dbd-ebf376d7f967.jpeg)
+![tennis-notes AWS](https://user-images.githubusercontent.com/54708394/84780630-c348ed80-b020-11ea-96f2-6b8ce82622b5.jpeg)
