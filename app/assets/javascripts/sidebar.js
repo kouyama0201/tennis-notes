@@ -14,6 +14,8 @@ $(window).on('load', function () { // 各ページでのサイドバーのボタ
     $(".user-edit").css("background-color", "#EEEEEE");
   } else if (document.URL.match("users")) {
     $(".users").css("background-color", "#EEEEEE");
+  } else if (document.URL.match("invites")) {
+    $(".invites").css("background-color", "#EEEEEE");
   } else {
     $(".top").css("background-color", "#EEEEEE");
   }
