@@ -1,4 +1,4 @@
-lock '3.12.0'
+lock '3.14.1'
 
 set :application, 'tennis-notes'
 
