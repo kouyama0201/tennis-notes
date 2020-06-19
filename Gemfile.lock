@@ -360,6 +360,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack
+  activestorage
+  activesupport
   bcrypt_pbkdf
   better_errors
   binding_of_caller
