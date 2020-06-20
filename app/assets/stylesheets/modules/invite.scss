@@ -1,0 +1,49 @@
+.invite-main {
+  background: #F5F5F5;
+  &__content {
+    width: 1000px;
+    padding-top: 60px;
+  }
+}
+
+.invite-list {
+  background-color: #FFFFFF;
+  height: 500px;
+  width: 770px;
+  padding: 0 15px 15px;
+  margin: 0 150px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  &__post {
+    height: 140px;
+    width: 740px;
+    padding-top: 15px;
+    font-size: 14px;
+    border-bottom: solid 1px #DDDDDD;
+    &__upper {
+      &--avatar {
+        float: left;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+      &--user {
+        display: flex;
+        justify-content: space-between;
+      }
+      &--day {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    &__lower {
+      background-color: #F0F7FF;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 5px;
+      padding: 0 10px;
+      border: dashed 1px #5B8BD0;
+      &--title {
+        font-size: 16px;
+      }
+    }
+  }
+}
