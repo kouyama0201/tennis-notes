@@ -17,5 +17,5 @@ Rails.application.routes.draw do
 
   resources :relationships, only: %i[create destroy]
 
-  resources :invites
+  resources :invites, only: %i[index new]
 end
