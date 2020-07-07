@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_064233) do
+ActiveRecord::Schema.define(version: 2020_07_07_054851) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 2020_03_14_064233) do
     t.datetime "updated_at", null: false
     t.index ["log_id"], name: "index_comments_on_log_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "invites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "event_day"
+    t.string "title"
+    t.integer "prefecture_id"
+    t.string "address"
+    t.string "level"
+    t.integer "capacity"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_invites_on_user_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -74,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_064233) do
 
   add_foreign_key "comments", "logs"
   add_foreign_key "comments", "users"
+  add_foreign_key "invites", "users"
   add_foreign_key "likes", "logs"
   add_foreign_key "likes", "users"
   add_foreign_key "logs", "users"
