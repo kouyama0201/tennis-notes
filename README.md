@@ -1,9 +1,10 @@
-# [Tennis Notes](https://www.tennis-notes.com/)
+# Tennis Notes
 テニスの練習記録を投稿・共有できるサイトです。<br>
 転職活動用のポートフォリオとして作成致しました。
 
 # URL
-https://www.tennis-notes.com/
+https://www.tennis-notes.com/ (現在停止中)
+
 
 画面右上の"簡単ログイン"ボタンから全機能をお試しいただけます。<br>
 テストユーザーのユーザー情報は編集できません。
