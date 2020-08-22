@@ -1,0 +1,85 @@
+<body class="invite-main">
+  <div class="invite-main__content">
+    <%= form_with(model: @invite, local: true) do |f| %>
+      <div class="invite-form">
+        <div class="invite-form__item">
+          主催者
+          <div class="invite-form__item--name">
+            <%= current_user.name %>
+          </div>
+        </div>
+        <div class="invite-form__item">
+          開催日
+          <div class="invite-form__item--event_day">
+            <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+              <%= f.text_field :event_day, class: "datetimepicker-input form-control text-center", autocomplete: "off" %>
+                <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                  <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+              $(function () {
+                $('#datetimepicker4').datetimepicker({
+                    format: 'L'
+                });
+              });
+            </script>
+            <div class="input-group time" id="datetimepicker3" data-target-input="nearest">
+              <%= f.text_field :event_time, class: "datetimepicker-input form-control text-center", autocomplete: "off" %>
+                <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="far fa-clock"></i></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker3').datetimepicker({
+                        format: 'LT'
+                    });
+                });
+            </script>
+            <span class="invite-form__item--event_day--word">
+              から
+            </span>
+            <%= f.select :level, [["１"],["２"],["３"],["４"],["５"],["６"],["７"],["８"],["９"],["１０"],["１１"],["１２"]], {}, class: "invite-form__item--event_day--field" %>
+            <span class="invite-form__item--event_day--word">
+              時間
+            </span>
+          </div>
+        </div>
+        <div class="invite-form__item">
+          募集内容
+          <div class="invite-form__item--title">
+            <%= f.text_field :title, class: "form-control", autocomplete: "off" %>
+          </div>
+        </div>
+        <div class="invite-form__item">
+          募集レベル
+          <div class="invite-form__item--level">
+            <%= f.select :level, [["誰でも", "誰でも"],["初心者", "初心者"],["初心者 ~ 中級者", "初心者 ~ 中級者"],["中級者", "中級者"],["中級者 ~ 上級者", "中級者 ~ 上級者"],["上級者", "上級者"]], {}, class: "invite-form__item--level--field" %>
+          </div>
+        </div>
+        <div class="invite-form__item">
+          定員
+          <div class="invite-form__item--capacity">
+            <%= f.text_field :capacity, class: "invite-form__item--capacity--field", autocomplete: "off" %>
+              人まで
+          </div>
+        </div>
+        <div class="invite-form__item">
+          会場名
+          <div class="invite-form__item--place">
+            <%= f.text_field :place, class: "form-control", autocomplete: "off" %>
+          </div>
+        </div>
+        <div class="invite-form__item">
+          住所
+          <div class="invite-form__item--address">
+            <%= f.text_field :address, class: "form-control", autocomplete: "off" %>
+          </div>
+        </div>
+        <%= f.submit "投稿する", class: "invite-btn btn btn-primary btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</body>
+<%= render 'layouts/sidebar' %>

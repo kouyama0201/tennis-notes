@@ -1,11 +1,13 @@
 <div class="side-bar">
   <%= link_to "TOP", root_path, class: "side-bar__list top" %>
   <%= link_to "新規投稿", new_log_path, class: "side-bar__list new" %>
-  <%= link_to "投稿一覧", user_path(current_user), class: "side-bar__list user" %>
+  <%= link_to "投稿した記事", user_path(current_user), class: "side-bar__list user" %>
   <%= link_to "フォロー中", following_user_path(current_user), class: "side-bar__list following" %>
   <%= link_to "フォロワー", followers_user_path(current_user), class: "side-bar__list followers" %>
   <%= link_to "いいね！した投稿", like_user_path(current_user), class: "side-bar__list like" %>
   <%= link_to "ユーザー一覧", users_path, class: "side-bar__list users" %>
+  <%= link_to "練習相手を募集する", new_invite_path, class: "side-bar__list new-invite" %>
+  <%= link_to "練習相手を探す", invites_path, class: "side-bar__list invites" %>
   <%= link_to "アカウント編集", edit_user_registration_path, class: "side-bar__list user-edit" %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "side-bar__list" %>
 </div>

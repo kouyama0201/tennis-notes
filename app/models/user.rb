@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :logs
   has_many :comments
+  has_many :invites
 
   has_many :likes, dependent: :destroy
   has_many :like_logs, through: :likes, source: :log
