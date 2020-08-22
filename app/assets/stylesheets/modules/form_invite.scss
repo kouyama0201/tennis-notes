@@ -1,0 +1,52 @@
+.invite-form {
+  background-color: #FFFFFF;
+  height: 564px;
+  width: 770px;
+  margin: 0 150px;
+  padding: 15px;
+  border: solid 1px #EEEEEE;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  &__item {
+    margin-bottom: 10px;
+    &--event_day {
+      display: flex;
+      &--word {
+        line-height: 38px;
+        margin: 0 6px;
+      }
+      &--field {
+        border: solid 1px #D3D3D3;
+        border-radius: 3px;
+        padding: 0 8px;
+      }
+    }
+    &--level {
+      &--field {
+        border: solid 1px #D3D3D3;
+        border-radius: 3px;
+        padding: 6px 8px;
+      }
+    }
+    &--capacity {
+      &--field {
+        width: 45px;
+        text-align: right;
+        border: solid 1px #D3D3D3;
+        border-radius: 3px;
+        padding: 6px 8px;
+      }
+    }
+  }
+}
+
+.invite-btn {
+  margin-top: 15px;
+}
+
+.date {
+  width: 200px;
+}
+
+.time {
+  width: 160px;
+}
